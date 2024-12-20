@@ -29,7 +29,7 @@ body {
     height: 680px;
     background-color: #f4f4f4;
     border-radius: 30px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    /* box-shadow: 0 0 30px rgba(0, 0, 0, .2); */
     overflow: hidden;
 }
 
@@ -120,7 +120,7 @@ form {
     background: #FFB500;
     border: none;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, .1); */
     cursor: pointer;
     color: #fff;
     font-weight: 400;
