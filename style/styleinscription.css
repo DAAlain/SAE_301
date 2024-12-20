@@ -21,7 +21,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: blue;
 }
 
 .container {
@@ -31,6 +30,7 @@ body {
     background-color: #f4f4f4;
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    overflow: hidden;
 }
 
 .form-box {
@@ -38,13 +38,31 @@ body {
     right: 0;
     width: 50%;
     height: 100%;
-    background-color: seagreen;
+    /* background-color: seagreen; */
     display: flex;
     align-items: center;
     color: #000;
     text-align: center;
     padding: 40px;
+    z-index: 1;
+    transition: .6s ease-in-out 1.2s, visibility 0s 1s;
 }   
+
+.container.active .form-box {
+    right: 50%;
+}
+
+.form-box.register {
+    visibility: hidden;
+}
+
+.container.active .form-box.register {
+    visibility: visible;
+}
+
+.container.active .form-box.login {
+    visibility: hidden;
+}
 
 form {
     width: 100%;
@@ -108,4 +126,79 @@ form {
     font-weight: 400;
 }
 
-/* 10 min de vidéo */
+.container p {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+.toggle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-box::before {
+    content: '';
+    position: absolute;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    background: #FFB500;
+    border-radius: 200px;
+    z-index: 2;
+    transition: 1.8s ease-in-out;
+}
+
+.container.active .toggle-box::before {
+    left: 50%;
+
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: #fff;
+    /* background: seagreen; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: .6s ease-in-out;
+}
+
+.toggle-panel.toggle-left {
+    left: 0;
+    transition-delay: 1.2s;
+}
+
+.container.active .toggle-panel.toggle-left {
+    left: -50%;
+    transition-delay: .6s;
+}
+
+.toggle-panel.toggle-right {
+    right: -50%;
+    transition-delay: .6s;
+}
+
+.container.active .toggle-panel.toggle-right {
+    right: 0;
+    transition-delay: 1.2s ;
+}
+
+.toggle-panel p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.toggle-panel .btn {
+    width: 295px;
+    height: 80px;
+    background: transparent;
+    border: #fff 2px solid;
+    box-shadow: none;
+}
+
+/*Temps vidéo : 24:45 */
