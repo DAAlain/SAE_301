@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../style/styleinscription.css">
+    <link rel="stylesheet" href="style/styleinscription.css">
 </head>
 <body>
     <div class="container">
@@ -82,6 +82,6 @@
 
 
     </div>
-    <script src="../js/scriptinscription.js"></script>
+    <script src="js/scriptinscription.js"></script>
 </body>
 </html>
