@@ -1,0 +1,3 @@
+<?php
+
+define("MDP", "mmi");

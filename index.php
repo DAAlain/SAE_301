@@ -3,10 +3,14 @@ session_start();
 require "config/config.php";
 require "controlleur/controlleur.php";
 
-try{ 
-    if (!isset($_SESSION))
-        header ("Location: vue/vueaccueil.php");
+if (isset($_SESSION["nom"])){
+    header("Location: vue/vuedashboard.php");
 }
-catch (Exception $e) {
-
+else{
+    if(isset($_GET["action"])){
+        if ($_GET["action"] == "login")
+            login($_POST["nom"],$_POST["mdp"]);
+    }
+    else
+        header("Location: vue/vueaccueil.php");
 }
