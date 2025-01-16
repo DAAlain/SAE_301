@@ -8,5 +8,6 @@
 <body>
     <div>Hello <?=$_SESSION["nom"]?></div>
     <p>js</p>
+    <p>jsjsjs</p>
 </body>
 </html>
