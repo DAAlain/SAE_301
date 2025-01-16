@@ -7,5 +7,6 @@
 </head>
 <body>
     <div>Hello <?=$_SESSION["nom"]?></div>
+    <p>js</p>
 </body>
 </html>
