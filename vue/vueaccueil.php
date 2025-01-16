@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <a href="vue/vueaccueil.php"></a><a href="index.php?action=inscription">Connexion</a><a href="vue/vueinscription.php">Inscription</a>
+        <a href="vue/vueaccueil.php"></a><a href="index.php?action=inscription">Connexion</a>
     </header>
 </body>
 </html>
