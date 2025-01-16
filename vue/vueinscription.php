@@ -19,7 +19,7 @@
 <body>
     <div class="container">
 
-
+        <!--Formulaire Connexion-->
         <div class="form-box login">
             <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=login"?>">
                 <h1 class="bakbak-one-regular">Connexion</h1>
@@ -38,16 +38,7 @@
             </form>
         </div>
 
-
-
-
-
-
-
-
-
-
-        
+        <!--Formulaire Inscription-->
         <div class="form-box register">
             <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=register"?>">
                 <h1 class="bakbak-one-regular">Inscription</h1>
@@ -67,6 +58,7 @@
             </form>
         </div>
 
+        <!--Redirection Formulaire Inscription/Connexion-->
         <div class="toggle-box">
             <div class="toggle-panel toggle-left">
                 <h1 class="bakbak-one-regular">Hello, Bienvenue !</h1>
