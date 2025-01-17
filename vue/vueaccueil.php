@@ -51,30 +51,64 @@
             </tr>
         </table>
     </div>
-    <div class="page2">
-        <div class="page2-container">
-            <div class="page2-content">
-                <h2>AVANTAGES POUR LES APICULTEURS</h2>
-                <p>Grâce à ce système, les apiculteurs peuvent :</p>
-                <div class="content-details">
-                    <img src="assets/img/up 1.png" alt="">
-
-                    <p>Améliorer la <strong>gestion de leurs ruches.</strong> </p>
-                </div>
-                <div class="content-details">
-                    <img src="assets/img/shield 1.png" alt="">
-                    <p>Garantir <strong>la santé</strong> à long terme de leurs colonies. </p>
-                </div>
-                <div class="content-details">
-                    <img src="assets/img/fast-service 1.png" alt="">
-                    <p><strong>Réagir rapidement </strong>aux situations inhabituelles, comme l'essaimage ou le vol.</p>
+    <div class="wrapper">
+        <div class="scroll-horizontal">
+            <div class="page2">
+                <div class="page2-container">
+                    <div class="page2-content">
+                        <h2>AVANTAGES POUR LES APICULTEURS</h2>
+                        <p>Grâce à ce système, les apiculteurs peuvent :</p>
+                        <div class="content-details">
+                            <img src="assets/img/up 1.png" alt="">
+                            <p>Améliorer la <strong>gestion de leurs ruches.</strong></p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/shield 1.png" alt="">
+                            <p>Garantir <strong>la santé</strong> à long terme de leurs colonies.</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/fast-service 1.png" alt="">
+                            <p><strong>Réagir rapidement</strong> aux situations inhabituelles, comme l'essaimage ou le vol.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="page3"></div>
+            <div class="page4"></div>
+        </div>
+        <div class="scroll-vertical">
+            <div class="page5"></div>
         </div>
     </div>
-    <div class="page3">
-        
-    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animation horizontale pour .scroll-horizontal
+        gsap.to(".scroll-horizontal", {
+            x: () => -(document.querySelector(".scroll-horizontal").scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".scroll-horizontal",
+                start: "top top",
+                end: () => "+=" + (document.querySelector(".scroll-horizontal").scrollWidth - window.innerWidth),
+                scrub: true,
+                pin: true,
+            }
+        });
+
+        // Scroll vertical pour .scroll-vertical
+        ScrollTrigger.create({
+            trigger: ".scroll-vertical",
+            start: "top top",
+            end: "bottom bottom",
+            pinSpacing: false,
+        });
+    </script>
+
 </body>
 
 </html>
