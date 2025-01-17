@@ -43,18 +43,18 @@
             <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=register"?>">
                 <h1 class="bakbak-one-regular">Inscription</h1>
                 <div class="input-box">
-                    <input class="exo-regular" type="text" placeholder="Nom d'utilisateur" name="Nom" required>
+                    <input class="exo-regular" type="text" placeholder="Nom d'utilisateur" name="Nom" value="" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input class="exo-regular" type="email" placeholder="E-mail" name="Mail" required>
+                    <input class="exo-regular" type="email" placeholder="E-mail" name="Mail" value="" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input class="exo-regular" type="password" placeholder="Mot de passe" name="Mdp" required>
+                    <input class="exo-regular" type="password" placeholder="Mot de passe" name="Mdp" value="" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
-                <button type="submit" class="btn bakbak-one-regular">Inscription</button>
+                <button type="submit" class="btn bakbak-one-regular" name="ajout" value="Valider">Inscription</button>
             </form>
         </div>
 

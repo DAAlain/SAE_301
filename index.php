@@ -10,9 +10,15 @@ else{
     if(isset($_GET["action"])){
         if ($_GET["action"] == "login")
             login($_POST["nom"],$_POST["mdp"]);
+        if ($_GET["action"] == "register"){
+            register($_POST["Nom"],$_POST["Mail"],$_POST["Mdp"]);
+            require "vue/vueinscription.php";
+        }
+            
         if ($_GET["action"] == "inscription"){
             require "vue/vueinscription.php";
         }
+        
     }
     else
         require "vue/vueaccueil.php";
