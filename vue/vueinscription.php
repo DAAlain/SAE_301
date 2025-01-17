@@ -24,8 +24,8 @@
             <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=login"?>">
                 <h1 class="bakbak-one-regular">Connexion</h1>
                 <div class="input-box">
-                    <input class="exo-regular" type="text" placeholder="Nom d'utilisateur" name="nom" value="" required>
-                    <i class='bx bxs-user'></i>
+                    <input class="exo-regular" type="text" placeholder="E-mail" name="mail" value="" required>
+                    <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
                     <input class="exo-regular" type="password" placeholder="Mot de passe" name="mdp" value="" required>
