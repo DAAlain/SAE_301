@@ -16,3 +16,18 @@ function ajoutBDD($requete){
     $ajout= $bdd->exec($requete);
     return $ajout;
 }
+
+function compte(){
+    $bdd=connexionBDD();
+    $resultat= $bdd->query("SELECT Nom FROM compte ;");
+    $recuperation = $resultat->fetchAll(PDO::FETCH_ASSOC);
+    return $recuperation;
+}
+
+function execReq($requete,$data){
+    $bdd = connexionBDD();
+    $reponse = $bdd->prepare($requete);
+    $reponse->execute($data);
+    $resultat = $reponse->fetch(PDO::FETCH_ASSOC);
+    return $resultat;
+}
