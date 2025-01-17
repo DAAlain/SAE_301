@@ -4,6 +4,14 @@
     text-decoration: none;
 }
 
+p{
+    margin: 0;
+}
+
+h2{
+    margin: 0;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -166,6 +174,7 @@ table tr td {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .content-details img {
@@ -176,13 +185,13 @@ table tr td {
 }
 
 .scroll-horizontal {
-    display: flex; /* Arrange les pages horizontalement */
-    width: 300vw; /* Largeur totale = 3 pages */
-    height: 100vh; /* Hauteur de la fenêtre */
+    display: flex;
+    width: 300vw;
+    height: 100vh;
 }
 
 .page2, .page3, .page4 {
-    flex: 0 0 100vw; /* Chaque page prend toute la largeur de l'écran */
+    flex: 0 0 100vw;
     height: 100vh;
 }
 
@@ -206,6 +215,31 @@ table tr td {
     background-repeat: no-repeat;
     background-position: center;
     z-index: 2;
+}
+
+.page3-container {    
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 75%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 48%, rgba(255,181,0,1) 100%);
+    margin-inline: auto;
+}
+
+.page3-content{
+    margin-left: 10%;
+    margin-top: 2%;
+    max-width: 400px;
+}
+
+.page3-content h2 {
+    font-family: "Bakbak One", serif;
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 0.9;
+    margin: 0;
+    margin-bottom: 2.5rem;
 }
 
 .page4 {

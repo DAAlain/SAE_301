@@ -73,7 +73,42 @@
                     </div>
                 </div>
             </div>
-            <div class="page3"></div>
+            <div class="page3">
+                <div class="page3-container">
+                    <div class="page3-content">
+                        <h2>MAIS QUELS SONT CES OUTILS ?</h2>
+                        <p>Les ruches connectées sont équipées des dispositifs suivants :</p>
+                        <div class="content-details">
+                            <img src="assets/img/humidite 1.png" alt="">
+                            <p>Capteur d’humidité : surveille le niveau d'humidité.</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/temperatures 1.png" alt="">
+                            <p>Capteur de température : garantit des conditions idéales
+                                pour les abeilles.</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/vibrer 1.png" alt="">
+                            <p>Capteur de vibrations : détecte l'activité des abeilles</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/kilogramme 1.png" alt="">
+                            <p>Balance sous la ruche : mesure le poids pour suivre
+                                la production de miel.</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/cloche 1.png" alt="">
+                            <p>Alerte de prévention pour l’essaimage : identifie
+                                les comportements inhabituels.</p>
+                        </div>
+                        <div class="content-details">
+                            <img src="assets/img/gps 1.png" alt="">
+                            <p>Traqueur GPS : permet de localiser la ruche
+                                et de prévenir les vols.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="page4"></div>
         </div>
         <div class="scroll-vertical">
