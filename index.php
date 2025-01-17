@@ -10,7 +10,7 @@ else{
     if(isset($_GET["action"])){
 
         if ($_GET["action"] == "login")
-            login($_POST["nom"],$_POST["mdp"]);
+            login($_POST["mail"],$_POST["mdp"]);
 
         if ($_GET["action"] == "register"){
             register($_POST["Nom"],$_POST["Mail"],$_POST["Mdp"]);

@@ -1,20 +1,19 @@
 <?php
 require_once "modele/bdd.php";
 
-function login($nom,$mdp){
+function login($mail,$mdp){
     if (isset($_POST["ok"])){
-        $nom_utilisateur = $nom;
+        $nom_utilisateur = $mail;
         $mot_de_passe = $mdp;
 
-        $requete = "SELECT * FROM compte WHERE Nom=?;";
+        $requete = "SELECT * FROM compte WHERE Mail=?;";
         $data = $nom_utilisateur;
         
         $donnees = execReq($requete,array($data));
-        var_dump($donnees);
         
         if($donnees){
             if(password_verify($mot_de_passe, $donnees["mdp"])){
-                $_SESSION["nom"] = $nom_utilisateur;
+                $_SESSION["nom"] = $donnees["Nom"];
                 header("Location: index.php");
             }
             else {
@@ -26,13 +25,6 @@ function login($nom,$mdp){
             require "vue/vueinscription.php";
         }
     }
-
-    /*if($mdp == MDP){
-        $_SESSION["nom"] = $nom;
-        header("Location: index.php");
-    }  
-    else
-        require "vue/vueinscription.php";  */
 }
 
 function register($Nom,$Mail,$Mdp){
