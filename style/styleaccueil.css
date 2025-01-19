@@ -4,11 +4,11 @@
     text-decoration: none;
 }
 
-p{
+p {
     margin: 0;
 }
 
-h2{
+h2 {
     margin: 0;
 }
 
@@ -20,7 +20,7 @@ body {
 
 .page1 {
     min-height: 100vh;
-    background-image: url("../assets/img/Hexagones.png"), linear-gradient(90deg, white 0%, white 75%, #FFB500 75%, #FFB500 100%);
+    background-image: url("../assets/img/Hexagones.webp"), linear-gradient(90deg, white 0%, white 75%, #FFB500 75%, #FFB500 100%);
     background-size: auto;
     background-repeat: no-repeat;
     margin: 0;
@@ -138,24 +138,24 @@ table tr td {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/img/background_page2.png");
+    background-image: url("../assets/img/background_page2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 2;
 }
 
-.page2-container {    
+.page2-container {
     display: flex;
     align-items: center;
     height: 80%;
     width: 75%;
     border-radius: 25px;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 48%, rgba(255,181,0,1) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 48%, rgba(255, 181, 0, 1) 100%);
     margin-inline: auto;
 }
 
-.page2-content{
+.page2-content {
     margin-left: 10%;
     margin-top: 2%;
     max-width: 400px;
@@ -170,7 +170,7 @@ table tr td {
     margin-bottom: 2.5rem;
 }
 
-.content-details{
+.content-details {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -190,7 +190,9 @@ table tr td {
     height: 100vh;
 }
 
-.page2, .page3, .page4 {
+.page2,
+.page3,
+.page4 {
     flex: 0 0 100vw;
     height: 100vh;
 }
@@ -210,24 +212,24 @@ table tr td {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/img/background_page3.png");
+    background-image: url("../assets/img/background_page3.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 2;
 }
 
-.page3-container {    
+.page3-container {
     display: flex;
     align-items: center;
     height: 80%;
     width: 75%;
     border-radius: 25px;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 48%, rgba(255,181,0,1) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 48%, rgba(255, 181, 0, 1) 100%);
     margin-inline: auto;
 }
 
-.page3-content{
+.page3-content {
     margin-left: 10%;
     margin-top: 2%;
     max-width: 400px;
@@ -257,13 +259,313 @@ table tr td {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/img/background_page4.png");
+    background-image: url("../assets/img/background_page4.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 2;
 }
 
+.page4-container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 75%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 48%, rgba(255, 181, 0, 1) 100%);
+    margin-inline: auto;
+}
+
+.page4-content {
+    margin-left: 10%;
+    margin-top: 2%;
+    max-width: 400px;
+}
+
+.page4-content h2 {
+    font-family: "Bakbak One", serif;
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 0.9;
+    margin: 0;
+    margin-bottom: 2.5rem;
+}
+
+.page4-content p {
+    margin-bottom: 1rem;
+}
+
+.content-details p {
+    margin: 0;
+}
+
+.content-details-cta {
+    background: #FFB500;
+    padding: 5px 15px;
+    font-weight: 400;
+    border-radius: 30px;
+    color: white;
+
+}
+
 .scroll-vertical {
     min-height: 100vh;
+}
+
+.page5 {
+    position: relative;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+}
+
+.page5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/background_page5.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.page5-container {
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 75%;
+    border-radius: 25px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 48%, #445B1F 100%);
+    margin-inline: auto;
+}
+
+.page5-content {
+    max-width: 80%;
+    margin-left: 9%;
+    margin-top: 2%;
+}
+
+.page5-content>.content-details {
+    display: block;
+}
+
+.content-details h3 {
+    color: #445B1F;
+
+}
+
+.page5-content h2 {
+    font-family: "Bakbak One", serif;
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 0.9;
+    margin: 0;
+    margin-bottom: 2.5rem;
+    color: #445B1F;
+}
+
+.page5-content p {
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 20px 40px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #000;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #000;
+}
+
+
+
+@media screen and (max-width: 970px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        display: none;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #FFB500;
+        padding: 10px 20px;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+    }
+
+    .menu-hamburger .menu-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .menu-hamburger ul {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        list-style: none;
+        padding: 20px 0;
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-hamburger ul.active {
+        display: flex;
+    }
+
+    .menu-hamburger ul li {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .page1 {
+        min-height: auto;
+        padding: 20px;
+        background-image: none;
+        margin-top: 60px;
+    }
+
+    .content-droite img {
+        display: none;
+    }
+
+    .page2,
+    .page3,
+    .page4 {
+        position: static;
+        height: auto;
+        background: none;
+        margin: 20px 0;
+    }
+
+    .page2::before,
+    .page3::before,
+    .page4::before {
+        background: none;
+    }
+
+    .page2-container,
+    .page3-container,
+    .page4-container {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .page2-content,
+    .page3-content,
+    .page4-content {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .scroll-horizontal {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+
+    .scroll-vertical {
+        min-height: auto;
+    }
+
+    table tr td {
+        font-size: 14px;
+        padding: 10px;
+        line-height: 1.4;
+    }
+
+    .page5 {
+        position: static;
+        height: auto;
+        background: none;
+        margin: 20px 0;
+    }
+
+    .page5-container {
+        width: 90%;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .page5-content {
+        margin: 0;
+    }
 }
