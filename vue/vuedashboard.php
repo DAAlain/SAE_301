@@ -8,5 +8,6 @@
 <body>
     <div>Hello <?=$_SESSION["nom"]?></div>
     <p>js</p>
+    <a href="index.php?action=quitter">Quitter</a>
 </body>
 </html>

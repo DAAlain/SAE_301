@@ -5,6 +5,11 @@ require "controlleur/controlleur.php";
 
 if (isset($_SESSION["nom"])){
     require "vue/vuedashboard.php";
+
+    if (isset($_GET["action"])){
+        if ($_GET["action"] == "quitter")
+            quitter();
+    }
 }
 else{
     if(isset($_GET["action"])){

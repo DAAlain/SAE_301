@@ -246,7 +246,7 @@
             menu.classList.toggle("active");
         }
     </script>
-
+    <script src="../js/scriptaccueil.js"></script>
 </body>
 
 </html>

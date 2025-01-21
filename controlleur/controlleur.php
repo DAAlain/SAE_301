@@ -37,3 +37,9 @@ function register($Nom,$Mail,$Mdp){
     $requeteajout= "INSERT INTO compte VALUES('$name','$email','$MDP',0)";
     ajoutBDD($requeteajout);
 }
+
+function quitter(){
+    session_destroy();
+    setcookie(session_name(), '', time() - 3600, '/');
+    header("Location: index.php");
+}
