@@ -24,7 +24,7 @@
             <div class="header-milieu">
                 <a href="">ACCUEIL</a>
                 <a href="">LE PROJET</a>
-                <a href="">VOUS SENSIBILISER</a>
+                <a href="#page5">VOUS SENSIBILISER</a>
             </div>
             <div class="header-fin">
                 <a href="index.php?action=inscription" class="header-inscription">S'INSCRIRE</a>
@@ -54,7 +54,7 @@
     </div>
     <div class="wrapper">
         <div class="scroll-horizontal">
-            <div class="page2">
+            <div class="page2" id="page2">
                 <div class="page2-container">
                     <div class="page2-content">
                         <h2>AVANTAGES POUR LES APICULTEURS</h2>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page3">
+            <div class="page3" id="page3">
                 <div class="page3-container">
                     <div class="page3-content">
                         <h2>MAIS QUELS SONT CES OUTILS ?</h2>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="page4">
+            <div class="page4" id="page4">
                 <div class="page4-container">
                     <div class="page4-content">
                         <h2>MAIS COMMENT SURVEILLER CES CAPTEURS ?</h2>
@@ -133,7 +133,7 @@
             </div>
         </div>
         <div class="scroll-vertical">
-            <div class="page5">
+            <div class="page5" id="page5">
                 <div class="page5-container">
                     <div class="page5-content">
                         <h2>LES ABEILLES EN DANGER : COMMENT LA TECHNOLOGIE PEUT LES SAUVER ?</h2>
@@ -169,10 +169,10 @@
             <div class="footer-section">
                 <h3>À propos</h3>
                 <ul>
-                    <li><a href="#">Avantages pour les apiculteurs</a></li>
-                    <li><a href="#">Quels sont ces outils ?</a></li>
-                    <li><a href="#">Comment surveiller ces capteurs ?</a></li>
-                    <li><a href="#">Les abeilles en danger</a></li>
+                    <li><a href="#page2">Avantages pour les apiculteurs</a></li>
+                    <li><a href="#page3">Quels sont ces outils ?</a></li>
+                    <li><a href="#page4">Comment surveiller ces capteurs ?</a></li>
+                    <li><a href="#page5">Les abeilles en danger</a></li>
                 </ul>
             </div>
             <div class="footer-section">
