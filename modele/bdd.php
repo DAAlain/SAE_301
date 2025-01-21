@@ -17,17 +17,38 @@ function ajoutBDD($requete){
     return $ajout;
 }
 
+function ajoutBDDPrep($requete, $data){
+    $bdd=connexionBDD();
+    $ajoutprep = $bdd->prepare($requete);
+    $ajoutprep->execute($data);
+    return $ajoutprep;
+}
+/*
 function compte(){
     $bdd=connexionBDD();
     $resultat= $bdd->query("SELECT Nom FROM compte ;");
     $recuperation = $resultat->fetchAll(PDO::FETCH_ASSOC);
     return $recuperation;
-}
+}*/
 
-function execReq($requete,$data){
+function execReqPrep($requete,$data){
     $bdd = connexionBDD();
     $reponse = $bdd->prepare($requete);
     $reponse->execute($data);
     $resultat = $reponse->fetch(PDO::FETCH_ASSOC);
     return $resultat;
+}
+
+function execReq($requete){
+    $bdd= connexionBDD();
+    $reponse= $bdd->query($requete);
+    $resultat= $reponse->fetchAll(PDO::FETCH_ASSOC);
+    return $resultat;
+}
+
+function deleteligne($requete, $data){
+    $bdd= connexionBDD();
+    $reponse = $bdd->prepare($requete);
+    $reponse->execute($data);
+    return $reponse;
 }
