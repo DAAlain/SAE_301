@@ -40,7 +40,7 @@ function register($Nom,$Mail,$Mdp){
         $email = $Mail;
     if (isset($Mdp))
         $MDP = password_hash($Mdp, PASSWORD_DEFAULT);
-    $requeteajout= "INSERT INTO compte VALUES('$name','$email','$MDP',0)";
+    $requeteajout= "INSERT INTO compte (Nom,Mail,mdp,autorisation) VALUES('$name','$email','$MDP',0)";
     ajoutBDD($requeteajout);
 }
 
