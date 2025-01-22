@@ -29,6 +29,10 @@ if (isset($_SESSION["nom"])){
         }
     }
 
+    if(isset($_GET["id"])){
+        require "vue/vuedashboard.php";
+    }
+
 }
 else{
     if(isset($_GET["action"])){

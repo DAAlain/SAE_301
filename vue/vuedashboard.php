@@ -26,11 +26,22 @@
     $user_id = $_SESSION["id"];
     $requete = "SELECT id FROM ruche WHERE id_compte = ?";
     $ruches_utilisateur = execReqPrepAll($requete, [$user_id]);
-    if (!$ruches_utilisateur) {
-        die("Aucune ruches associées à votre compte");
-    }
 
+    //Pour afficher la liste des ruches que l'utilisateur possède
+    if (!empty($ruches_utilisateur)): ?>
+        <ul>
+            <?php foreach ($ruches_utilisateur as $ruche): ?>
+                <li>
+                    <a href="?id=<?= htmlspecialchars($ruche['id']) ?>">Ruche n°<?= $ruche['id'] ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>Vous n'avez aucune ruche pour le moment.</p>
+    <?php endif;
     
+
+    //Pour trouver les données du fichier dataruche.js
     $filename = "js/dataruches.js";
     if (file_exists($filename)) {
         $filecontent = file_get_contents($filename);
@@ -48,42 +59,52 @@
         }
         return false;
     }, ARRAY_FILTER_USE_KEY);
-
-    ?>
-
     
 
-    <?php if (!empty($ruches_filtrees)): ?>
-        <?php foreach ($ruches_filtrees as $id => $ruche): ?>
-            <h2>Ruche ID : <?= htmlspecialchars($id) ?></h2>
-            <p><strong>GPS :</strong> [<?= implode(', ', $ruche['gps']) ?>]</p>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Température (°C)</th>
-                        <th>Poids (kg)</th>
-                        <th>Humidité (%)</th>
-                        <th>Fréquence (Hz)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($ruche['data'] as $data): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($data['date']) ?></td>
-                            <td><?= htmlspecialchars($data['temperature']) ?></td>
-                            <td><?= htmlspecialchars($data['poids']) ?></td>
-                            <td><?= htmlspecialchars($data['humidite']) ?></td>
-                            <td><?= htmlspecialchars($data['frequence']) ?></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <p>Aucune donnée disponible pour vos ruches.</p>
-    <?php endif; ?>
+    //Pour afficher les données d'une seule ruche
+    $rucheData = null;
+    if (isset($_GET['id'])) {
+        $rucheId = $_GET['id'];
 
+        // Vérifier que la ruche appartient bien à l'utilisateur
+        $requeteRuche = "SELECT * FROM ruche WHERE id = ? AND id_compte = ?";
+        $dataRuche = [$rucheId, $user_id];
+        $ruche = execReqPrep($requeteRuche, $dataRuche);
+        
+        if (!empty($ruche)) {
+            // Récupérer les données de cette ruche
+            $rucheData = $ruches_filtrees["$rucheId"]; //trouver pour avoir que la ruche de l'id et que cela correspond avec le js.
+        }
+    }
+    
+    //Affichage des données pour la ruche selectionnée
+    if ($rucheData): ?>
+        <h2>Données de la ruche : <?=htmlspecialchars($ruche["id"]) ?></h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Température (°C)</th>
+                    <th>Poids (kg)</th>
+                    <th>Humidité (%)</th>
+                    <th>Fréquence (Hz)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($rucheData['data'] as $data): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($data['date']) ?></td>
+                        <td><?= htmlspecialchars($data['temperature']) ?></td>
+                        <td><?= htmlspecialchars($data['poids']) ?></td>
+                        <td><?= htmlspecialchars($data['humidite']) ?></td>
+                        <td><?= htmlspecialchars($data['frequence']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php elseif (isset($_GET['id'])): ?>
+        <p>Aucune donnée disponible pour cette ruche ou elle ne vous appartient pas.</p>
+    <?php endif; ?>
 </body>
 
 </html>
