@@ -38,6 +38,13 @@ function execReqPrep($requete,$data){
     $resultat = $reponse->fetch(PDO::FETCH_ASSOC);
     return $resultat;
 }
+function execReqPrepAll($requete,$data){
+    $bdd = connexionBDD();
+    $reponse = $bdd->prepare($requete);
+    $reponse->execute($data);
+    $resultat = $reponse->fetchAll(PDO::FETCH_ASSOC);
+    return $resultat;
+}
 
 function execReq($requete){
     $bdd= connexionBDD();

@@ -14,6 +14,7 @@ function login($mail,$mdp){
         if($donnees){
             if(password_verify($mot_de_passe, $donnees["mdp"])){
                 $_SESSION["nom"] = $donnees["Nom"];
+                $_SESSION["id"]=$donnees["id"];
                 if ($donnees["autorisation"] == "0"){
                 header("Location: index.php?acces=normal");
                 }
@@ -55,7 +56,8 @@ function ajout(){
         $nom= $_SESSION["nom"];
         $nom_ruche= $_POST["nom_ruche"];
         $id_ruche= $_POST["id_ruche"];
-        $requete_ruche = "INSERT INTO demande_ruche VALUES('$id_ruche','$nom','$nom_ruche',NOW(),'en attente')";
+        $id_compte=$_SESSION["id"];
+        $requete_ruche = "INSERT INTO demande_ruche VALUES('$id_ruche','$id_compte','$nom','$nom_ruche',NOW(),'en attente')";
         ajoutBDD($requete_ruche);
     }
 }
@@ -74,8 +76,8 @@ function demande_gerer(){
             $data = [$demande_id];
             $demande = execReqPrep($requete, $data);
 
-            $requete_ajout = "INSERT INTO ruche VALUES(?,?,?)";
-            $data_ajout = [$demande["id"],$demande["nom_compte"],$demande["nom_ruche"]];
+            $requete_ajout = "INSERT INTO ruche VALUES(?,?,?,?)";
+            $data_ajout = [$demande["id"],$demande["id_compte"],$demande["nom_compte"],$demande["nom_ruche"]];
             ajoutBDDPrep($requete_ajout, $data_ajout);
         }
         $requete_delete = "DELETE FROM demande_ruche WHERE id=?";
