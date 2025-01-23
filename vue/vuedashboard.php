@@ -5,20 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style/styledashboard.css">
 </head>
 
 <body>
     <div>Hello <?= $_SESSION["nom"] ?></div>
-    <p>js</p>
     <a href="index.php?action=quitter">Quitter</a>
-    <br>
-    <br>
-    <!--A mettre dans un popup ou autre-->
-    <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajout" ?>">
-        <input type="text" name="id_ruche" placeholder="Id de votre ruche" value="" required>
-        <input type="text" name="nom_ruche" placeholder="Nom pour votre ruche" value="" required>
-        <button type="submit" name="ruche" value="Valider">Envoyer la demande</button>
-    </form>
 
     <h2>Vos ruches</h2>
     <?php
@@ -29,18 +21,31 @@
 
     //Pour afficher la liste des ruches que l'utilisateur possède
     if (!empty($ruches_utilisateur)): ?>
-        <ul>
+        <div class="ruches">
             <?php foreach ($ruches_utilisateur as $ruche): ?>
-                <li>
-                    <a href="?id=<?= htmlspecialchars($ruche['id']) ?>">Ruche n°<?= $ruche['id'] ?></a>
-                </li>
+                <a href="?id=<?= htmlspecialchars($ruche['id']) ?>">Ruche n°<?= $ruche['id'] ?></a>
             <?php endforeach; ?>
-        </ul>
+            <a href="#" id="ajoutruche">+</a>
+        </div>
     <?php else: ?>
         <p>Vous n'avez aucune ruche pour le moment.</p>
+        <a href="#" id="ajoutruche2">+</a>
     <?php endif;
-    
+    ?>
 
+
+    <!--A mettre dans un popup ou autre-->
+    <div id="formajoutruche" style="display: none;">
+        <button class="quitter">Quitter le formulaire</button>
+        <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajout" ?>">
+            <input type="text" name="id_ruche" placeholder="Id de votre ruche" value="" required>
+            <input type="text" name="nom_ruche" placeholder="Nom pour votre ruche" value="" required>
+            <button type="submit" name="ruche" value="Valider" id="fermer">Envoyer la demande</button>
+        </form>
+    </div>
+
+
+    <?php
     //Pour trouver les données du fichier dataruche.js
     $filename = "js/dataruches.js";
     if (file_exists($filename)) {
@@ -59,7 +64,7 @@
         }
         return false;
     }, ARRAY_FILTER_USE_KEY);
-    
+
 
     //Pour afficher les données d'une seule ruche
     $rucheData = null;
@@ -70,16 +75,16 @@
         $requeteRuche = "SELECT * FROM ruche WHERE id = ? AND id_compte = ?";
         $dataRuche = [$rucheId, $user_id];
         $ruche = execReqPrep($requeteRuche, $dataRuche);
-        
+
         if (!empty($ruche)) {
             // Récupérer les données de cette ruche
             $rucheData = $ruches_filtrees["$rucheId"]; //trouver pour avoir que la ruche de l'id et que cela correspond avec le js.
         }
     }
-    
+
     //Affichage des données pour la ruche selectionnée
     if ($rucheData): ?>
-        <h2>Données de la ruche : <?=htmlspecialchars($ruche["id"]) ?></h2>
+        <h2>Données de la ruche : <?= htmlspecialchars($ruche["id"]) ?></h2>
         <table border="1">
             <thead>
                 <tr>
@@ -105,6 +110,7 @@
     <?php elseif (isset($_GET['id'])): ?>
         <p>Aucune donnée disponible pour cette ruche ou elle ne vous appartient pas.</p>
     <?php endif; ?>
+    <script src="js/scriptdashboard.js"></script>
 </body>
 
 </html>
