@@ -91,7 +91,7 @@ ruches ={
                 "frequence": 244
             },
             {
-                "date": "2024-11-0  3T08:00:00",
+                "date": "2024-11-03T08:00:00",
                 "temperature": 20,
                 "poids": 15.8,
                 "humidite": 80,

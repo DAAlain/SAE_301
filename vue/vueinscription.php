@@ -21,15 +21,15 @@
 
         <!--Formulaire Connexion-->
         <div class="form-box login">
-            <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=login"?>">
+            <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=login"?>" id="loginForm">
                 <h1 class="bakbak-one-regular">Connexion</h1>
                 <div class="input-box">
-                    <input class="exo-regular" type="text" placeholder="E-mail" name="mail" value="" required>
+                    <input class="exo-regular" type="email" placeholder="E-mail" name="mail" value="" required>
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
                     <input class="exo-regular" type="password" placeholder="Mot de passe" name="mdp" value="" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
                     <a href="#" class="exo-regular">Mot de passe oublié ?</a>
@@ -40,7 +40,7 @@
 
         <!--Formulaire Inscription-->
         <div class="form-box register">
-            <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=register"?>">
+            <form method="post" action="<?= $_SERVER["PHP_SELF"] ."?action=register"?>" id="registerForm" novalidate>
                 <h1 class="bakbak-one-regular">Inscription</h1>
                 <div class="input-box">
                     <input class="exo-regular" type="text" placeholder="Nom d'utilisateur" name="Nom" value="" required>
@@ -51,10 +51,14 @@
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input class="exo-regular" type="password" placeholder="Mot de passe" name="Mdp" value="" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <input class="exo-regular" type="password" placeholder="Mot de passe" name="Mdp" value="" 
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+                        title="Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre"
+                        required>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <button type="submit" class="btn bakbak-one-regular" name="ajout" value="Valider">Inscription</button>
+                <div id="error-messages" class="error-messages"></div>
             </form>
         </div>
 

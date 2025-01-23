@@ -36,7 +36,6 @@
         <div class="users-container">
             <div class="users-list">
                 <h2>GÉRER UTILISATEURS</h2>
-                <h3>Nouvelles connections</h3>
                 <div class="users-grid">
                     <?php $users = admin_users(); ?>
                     <?php if (isset($users) && $users): ?>
@@ -76,7 +75,7 @@
             let currentUserId = null;
 
             // Récupérer toutes les ruches de la base de données
-            const allRuches = <?php echo json_encode(get_ruches_by_user(3)); ?>;
+            const allRuches = <?php echo json_encode(get_ruches_by_user(3)); ?>; //Attention ici seulement pour l'utilisateur 3
             console.log('Ruches:', allRuches); // Pour déboguer
 
             userItems.forEach(item => {

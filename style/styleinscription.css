@@ -202,3 +202,16 @@ form {
 }
 
 /*Temps vidéo : 24:45 */
+
+
+.error-messages {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: left;
+    min-height: 20px;
+}
+
+.error-message {
+    margin: 5px 0;
+}
