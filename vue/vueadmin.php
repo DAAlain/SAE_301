@@ -17,18 +17,26 @@
             <a href="index.php?acces=admin" class="active">GÉRER UTILISATEURS</a>
             <a href="index.php?acces=ruches">GÉRER RUCHES</a>
         </nav>
-        <div class="quitter">
-            <a href="index.php?action=quitter"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
-                </svg>
-            </a>
-        </div>
-        <div class="admin-badge">
-            [ADMIN]
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+
+        <div class="profile">
+            <div class="profile-container">
+                <div class="quitter">
+                    <a href="index.php?action=quitter"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+                        </svg>
+                    </a>
+                </div>
+                <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
+                    <div class="profile-image-container">
+                        <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
+                        <div class="profile-image-overlay">
+                            <span>Modifier</span>
+                        </div>
+                    </div>
+                    <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
+                </form>
+                <span>[ADMIN] <?= htmlspecialchars($_SESSION["nom"]) ?></span>
+            </div>
         </div>
     </header>
 
@@ -192,6 +200,7 @@
             });
         });
     </script>
+    <script src="js/scriptadmin.js"></script>
 </body>
 
 </html>

@@ -5,11 +5,15 @@ body {
 }
 
 header {
+    background: #f7f7f7;
+    border-radius: 100px;
+    padding-inline: 30px;
+    padding-block: 10px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: white;
+    justify-content: space-between;
+    margin: 20px;
+    position: relative;
 }
 
 .logo img {
@@ -33,11 +37,7 @@ nav a.active {
     color: white;
 }
 
-.admin-badge {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
 
 main {
     padding: 40px;
@@ -235,6 +235,64 @@ h3 {
     margin-top: 30px;
 }
 
-.quitter{
-    background-color: gray;
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-image-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.profile-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image-overlay span {
+    color: white;
+    font-size: 12px;
+}
+
+.profile-image-container:hover .profile-image-overlay {
+    opacity: 1;
+}
+
+.profile-image-container:hover .profile-image {
+    filter: brightness(0.8);
+}
+
+.quitter {
+    background: #eaeaea;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.quitter a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
