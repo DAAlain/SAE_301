@@ -19,6 +19,7 @@
         </nav>
 
         <div class="profile">
+
             <div class="profile-container">
                 <div class="quitter">
                     <a href="index.php?action=quitter"><svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,10 +50,9 @@
                     <?php if (isset($users) && $users): ?>
                         <?php foreach ($users as $user): ?>
                             <div class="user-item" data-userid="<?= $user['id'] ?>">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
+                                <img src="assets/img/profiles/<?= !empty($user['photo_profil']) ? htmlspecialchars($user['photo_profil']) : 'default.png' ?>" 
+                                     alt="Photo de <?= htmlspecialchars($user['Nom']) ?>" 
+                                     class="user-profile-image">
                                 <span><?= $user['Nom'] ?></span>
                             </div>
                         <?php endforeach; ?>
