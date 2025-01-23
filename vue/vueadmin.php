@@ -75,7 +75,7 @@
             let currentUserId = null;
 
             // Récupérer toutes les ruches de la base de données
-            const allRuches = <?php echo json_encode(get_ruches_by_user(3)); ?>; //Attention ici seulement pour l'utilisateur 3
+            const allRuches = <?php echo json_encode(get_ruches()); ?>; //Attention ici seulement pour l'utilisateur 3
             console.log('Ruches:', allRuches); // Pour déboguer
 
             userItems.forEach(item => {

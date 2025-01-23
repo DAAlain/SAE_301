@@ -64,9 +64,22 @@
                         </svg>
                     </a>
                 </div>
+
                 <div class="profile">
-                    <span>Hello <?= $_SESSION["nom"] ?></span>
+                    <div class="profile-container">
+                        <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
+                            <div class="profile-image-container">
+                                <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
+                                <div class="profile-image-overlay">
+                                    <span>Modifier</span>
+                                </div>
+                            </div>
+                            <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
+                        </form>
+                        <span>Hello <?= htmlspecialchars($_SESSION["nom"]) ?></span>
+                    </div>
                 </div>
+
             </div>
 
             <h2>TABLEAU DE BORD</h2>

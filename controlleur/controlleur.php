@@ -16,6 +16,7 @@ function login($mail, $mdp)
             if (password_verify($mot_de_passe, $donnees["mdp"])) {
                 $_SESSION["nom"] = $donnees["Nom"];
                 $_SESSION["id"] = $donnees["id"];
+                $_SESSION["photo_profil"] = $donnees["photo_profil"] ?? 'default.png';
                 if ($donnees["autorisation"] == "0") {
                     header("Location: index.php?acces=normal");
                 }
@@ -117,6 +118,15 @@ function get_ruches_by_user($user_id)
     return $ruches;
 }
 
+function get_ruches()
+{
+    $requete = "SELECT * FROM ruche";
+    $connexion = connexionBDD();
+    $stmt = $connexion->query($requete);
+    $ruches = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $ruches;
+}
+
 function delete_user($user_id)
 {
     // Supprimer d'abord les ruches de l'utilisateur
@@ -137,4 +147,38 @@ function delete_ruche($ruche_id)
     $connexion = connexionBDD();
     $stmt = $connexion->prepare($requete);
     $stmt->execute(array($ruche_id));
+}
+
+function update_photo() {
+    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+        $upload_dir = 'assets/img/profiles/';
+        if (!file_exists($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        
+        $file_extension = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
+        $new_filename = uniqid() . '.' . $file_extension;
+        $upload_path = $upload_dir . $new_filename;
+        
+        if (move_uploaded_file($_FILES['photo']['tmp_name'], $upload_path)) {
+            // Supprimer l'ancienne photo
+            if (!empty($_SESSION['photo_profil']) && $_SESSION['photo_profil'] !== 'default.png') {
+                $old_photo = $upload_dir . $_SESSION['photo_profil'];
+                if (file_exists($old_photo)) {
+                    unlink($old_photo);
+                }
+            }
+            
+            // Mettre à jour la base de données
+            $connexion = connexionBDD();
+            $requete = "UPDATE compte SET photo_profil = ? WHERE id = ?";
+            $stmt = $connexion->prepare($requete);
+            $stmt->execute([$new_filename, $_SESSION['id']]);
+            
+            // Mettre à jour la session
+            $_SESSION['photo_profil'] = $new_filename;
+        }
+    }
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
 }

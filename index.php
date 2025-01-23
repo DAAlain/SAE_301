@@ -30,6 +30,10 @@ if (isset($_SESSION["nom"])) {
             demande_gerer();
         }
 
+        if ($_GET["action"] == "update_photo") {
+            update_photo();
+        }
+
         if (isset($_GET['action']) && $_GET['action'] === 'get_ruches' && isset($_GET['acces']) && $_GET['acces'] === 'admin') {
             $ruches = get_ruches_by_user($_GET['user_id']);
             header('Content-Type: application/json');
