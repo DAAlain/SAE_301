@@ -38,7 +38,6 @@ body {
     right: 0;
     width: 50%;
     height: 100%;
-    /* background-color: seagreen; */
     display: flex;
     align-items: center;
     color: #000;
@@ -54,6 +53,15 @@ body {
 
 .form-box.register {
     visibility: hidden;
+}
+
+.form-box label {
+    font-size: 13px;
+    color: #aaaaaa;
+    display: block;
+    margin-top: 1px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .container.active .form-box.register {
@@ -75,7 +83,7 @@ form {
 
 .input-box {
     position: relative;
-    margin: 30px 0;
+    margin: 30px 0 10px;
 }
 
 .input-box input {
@@ -120,7 +128,6 @@ form {
     background: #FFB500;
     border: none;
     border-radius: 20px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, .1); */
     cursor: pointer;
     color: #fff;
     font-weight: 400;
@@ -159,7 +166,6 @@ form {
     width: 50%;
     height: 100%;
     color: #fff;
-    /* background: seagreen; */
     display: flex;
     flex-direction: column;
     justify-content: center;

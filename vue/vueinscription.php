@@ -51,12 +51,13 @@
                     <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-box">
-                    <input class="exo-regular" type="password" placeholder="Mot de passe" name="Mdp" value="" 
+                    <input class="exo-regular" type="password" placeholder="Mot de passe *" name="Mdp" value="" 
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
                         title="Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre"
                         required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
+                <label for="">* Le mot de passe doit contenir au moins 8 caractères, une majuscule et un chiffre</label>
                 <button type="submit" class="btn bakbak-one-regular" name="ajout" value="Valider">Inscription</button>
                 <div id="error-messages" class="error-messages"></div>
             </form>
