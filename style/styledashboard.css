@@ -552,19 +552,6 @@ canvas {
     background: #d5d5d5;
 }
 
-.notes-ruches {
-    grid-column: 4/6;
-}
-
-.notes-ruches textarea {
-    width: 99%;
-    height: 99%;
-    border: black 1px solid;
-    border-radius: 0 10px 10px 10px;
-    resize: none;
-    
-}
-
 .map-section {
     background: white;
     padding: 24px;
@@ -585,3 +572,45 @@ canvas {
     width: 100%;
     border-radius: 10px;
 }
+
+.notes-ruches {
+    grid-column: 4/6;
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.notes-header h3 {
+    font-family: "Bakbak One", serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.save-note-btn {
+    background: #FFA600;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.save-note-btn:hover {
+    background: #FF8C00;
+}
+
+#editor {
+    height: 300px;
+    border-radius: 5px;
+}
+

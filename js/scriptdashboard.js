@@ -328,3 +328,56 @@ document.addEventListener('DOMContentLoaded', function () {
         map.fitBounds(markers);
     }
 });
+
+// Initialisation de Quill.js
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const rucheId = urlParams.get('id');
+    
+    if (!rucheId) return;
+
+    const quill = new Quill('#editor', {
+        theme: 'snow',
+        placeholder: 'Écrivez vos notes ici...',
+        modules: {
+            toolbar: [
+                ['bold', 'italic', 'underline'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // Charger les notes existantes
+    fetch(`save_note.php?ruche_id=${rucheId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.content) {
+                quill.root.innerHTML = data.content;
+            }
+        })
+        .catch(error => console.error('Erreur:', error));
+
+    // Gérer la sauvegarde des notes
+    document.getElementById('save-note').addEventListener('click', function() {
+        const content = quill.root.innerHTML;
+        
+        fetch('save_note.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `content=${encodeURIComponent(content)}&ruche_id=${rucheId}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Note enregistrée avec succès !');
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+            alert('Erreur lors de l\'enregistrement de la note');
+        });
+    });
+});

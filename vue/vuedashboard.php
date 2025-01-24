@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -287,7 +289,11 @@
                         <div id="map"></div>
                     </div>
                     <div class="notes-ruches">
-                        <textarea name="" id=""></textarea>
+                        <div class="notes-header">
+                            <h3>NOTES</h3>
+                            <button id="save-note" class="save-note-btn">Enregistrer</button>
+                        </div>
+                        <div id="editor"></div>
                     </div>
                 </div>
             <?php elseif (isset($_GET['id'])): ?>
@@ -295,7 +301,8 @@
             <?php endif; ?>
         </div>
     </div>
-
+    
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
         // Rendre les données disponibles pour JavaScript
         const ruches = <?php echo json_encode($ruches_filtrees); ?>;
