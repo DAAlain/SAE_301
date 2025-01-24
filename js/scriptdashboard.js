@@ -12,7 +12,7 @@ if (ajoutruche2) {
     });
 };
 
-const quitter = document.querySelector(".quitter");
+const quitter = document.querySelector(".quitter_form");
 if (quitter) {
     quitter.addEventListener("click", function () {
         document.getElementById("formajoutruche").style.display = 'none';
@@ -214,21 +214,117 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const profileImage = document.querySelector('.profile-image-container');
     const photoInput = document.querySelector('#photo-input');
     const photoForm = document.querySelector('#photo-form');
 
     if (profileImage && photoInput) {
-        profileImage.addEventListener('click', function() {
+        profileImage.addEventListener('click', function () {
             photoInput.click();
         });
 
-        photoInput.addEventListener('change', function() {
+        photoInput.addEventListener('change', function () {
             if (this.files && this.files[0]) {
                 // Soumettre le formulaire automatiquement quand une image est sélectionnée
                 photoForm.submit();
             }
         });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const ajoutruche = document.getElementById("ajoutruche");
+    const ajoutruche2 = document.getElementById("ajoutruche2");
+    const quitter = document.querySelector(".quitter");
+    const fermer = document.getElementById("fermer");
+    const formajoutruche = document.getElementById("formajoutruche");
+
+    function openForm() {
+        formajoutruche.classList.remove('closing');
+        formajoutruche.classList.add('active');
+    }
+
+    function closeForm() {
+        formajoutruche.classList.add('closing');
+        formajoutruche.addEventListener('animationend', function handler() {
+            formajoutruche.classList.remove('active', 'closing');
+            formajoutruche.style.display = 'none';
+            formajoutruche.removeEventListener('animationend', handler);
+        });
+    }
+
+    if (ajoutruche) {
+        ajoutruche.addEventListener("click", function (e) {
+            e.preventDefault();
+            formajoutruche.style.display = 'block';
+            requestAnimationFrame(() => openForm());
+        });
+    }
+
+    if (ajoutruche2) {
+        ajoutruche2.addEventListener("click", function (e) {
+            e.preventDefault();
+            formajoutruche.style.display = 'block';
+            requestAnimationFrame(() => openForm());
+        });
+    }
+
+    if (quitter) {
+        quitter.addEventListener("click", closeForm);
+    }
+
+    if (fermer) {
+        fermer.addEventListener("click", closeForm);
+    }
+});
+
+// Initialisation de la carte
+document.addEventListener('DOMContentLoaded', function () {
+    // Vérifier si l'élément map existe
+    const mapElement = document.getElementById('map');
+    if (!mapElement) return;
+
+    // Initialiser la carte
+    const map = L.map('map').setView([47.769622034321365, 7.270559009574735], 13);
+
+    // Ajouter la couche OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Icône personnalisée pour les ruches
+    const rucheIcon = L.icon({
+        iconUrl: 'assets/img/ruche-marker.png', // Créez cette icône ou utilisez une existante
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+
+    // Parcourir toutes les ruches et ajouter les marqueurs
+    Object.entries(ruches).forEach(([id, ruche]) => {
+        if (ruche.gps && ruche.gps.length === 2) {
+            const marker = L.marker(ruche.gps, { icon: rucheIcon }).addTo(map);
+
+            // Ajouter un popup avec les informations de la ruche
+            const lastData = ruche.data[ruche.data.length - 1];
+            const popupContent = `
+                <strong>Ruche N°${id}</strong><br>
+                Température: ${lastData.temperature}°C<br>
+                Humidité: ${lastData.humidite}%<br>
+                Poids: ${lastData.poids}kg<br>
+                Fréquence: ${lastData.frequence}hz
+            `;
+            marker.bindPopup(popupContent);
+        }
+    });
+
+    // Ajuster la vue pour montrer toutes les ruches
+    const markers = Object.values(ruches)
+        .filter(ruche => ruche.gps && ruche.gps.length === 2)
+        .map(ruche => ruche.gps);
+
+    if (markers.length > 0) {
+        map.fitBounds(markers);
     }
 });

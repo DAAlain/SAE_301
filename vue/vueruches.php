@@ -26,6 +26,7 @@
                         </svg>
                     </a>
                 </div>
+                <span>[ADMIN] <?= htmlspecialchars($_SESSION["nom"]) ?></span>
                 <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
                     <div class="profile-image-container">
                         <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
@@ -35,7 +36,6 @@
                     </div>
                     <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
                 </form>
-                <span>[ADMIN] <?= htmlspecialchars($_SESSION["nom"]) ?></span>
             </div>
         </div>
     </header>
@@ -47,13 +47,15 @@
                 <h3>Nouvelles demandes de ruche</h3>
                 <?php $demandes_ruches = demandes(); ?>
                 <?php if (isset($demandes_ruches) && !empty($demandes_ruches)): ?>
-                    <?php foreach ($demandes_ruches as $demande): ?>
-                        <div class="ruche-demande" onclick="afficherDetails('<?= $demande['id'] ?>', '<?= $demande['nom_compte'] ?>')">
-                            <div class="ruche-header">
-                                <h4>Ruche #<?= $demande['id'] ?> - <?= $demande['nom_compte'] ?></h4>
+                    <div class="ruches-grid">
+                        <?php foreach ($demandes_ruches as $demande): ?>
+                            <div class="ruche-demande" onclick="afficherDetails('<?= $demande['id'] ?>', '<?= $demande['nom_compte'] ?>')">
+                                <div class="ruche-header">
+                                    <h4>Ruche #<?= $demande['id'] ?> - <?= $demande['nom_compte'] ?></h4>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
                 <?php else: ?>
                     <p>Aucune nouvelle demande de ruche</p>
                 <?php endif; ?>

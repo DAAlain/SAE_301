@@ -61,7 +61,18 @@
                     </a>
                 </div>
                 <div class="profile">
-                    <span>Hello <?= $_SESSION["nom"] ?></span>
+                    <div class="profile-container">
+                        <span><?= htmlspecialchars($_SESSION["nom"]) ?></span>
+                        <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
+                            <div class="profile-image-container">
+                                <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
+                                <div class="profile-image-overlay">
+                                    <span>Modifier</span>
+                                </div>
+                            </div>
+                            <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -103,10 +114,17 @@
         </div>
     </div>
 
+    <script>
+        <?php
+        // Charger les données JSON
+        $jsonContent = file_get_contents("js/dataruches.json");
+        echo "const ruches = " . $jsonContent . ";\n";
+        ?>
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.1/dist/chartjs-adapter-moment.min.js"></script>
-    <script src="js/dataruches.js"></script>
     <script src="js/scriptstatistiques.js"></script>
 </body>
 

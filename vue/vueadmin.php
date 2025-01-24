@@ -27,6 +27,7 @@
                         </svg>
                     </a>
                 </div>
+                <span>[ADMIN] <?= htmlspecialchars($_SESSION["nom"]) ?></span>
                 <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
                     <div class="profile-image-container">
                         <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
@@ -36,7 +37,6 @@
                     </div>
                     <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
                 </form>
-                <span>[ADMIN] <?= htmlspecialchars($_SESSION["nom"]) ?></span>
             </div>
         </div>
     </header>
@@ -50,9 +50,9 @@
                     <?php if (isset($users) && $users): ?>
                         <?php foreach ($users as $user): ?>
                             <div class="user-item" data-userid="<?= $user['id'] ?>">
-                                <img src="assets/img/profiles/<?= !empty($user['photo_profil']) ? htmlspecialchars($user['photo_profil']) : 'default.png' ?>" 
-                                     alt="Photo de <?= htmlspecialchars($user['Nom']) ?>" 
-                                     class="user-profile-image">
+                                <img src="assets/img/profiles/<?= !empty($user['photo_profil']) ? htmlspecialchars($user['photo_profil']) : 'default.png' ?>"
+                                    alt="Photo de <?= htmlspecialchars($user['Nom']) ?>"
+                                    class="user-profile-image">
                                 <span><?= $user['Nom'] ?></span>
                             </div>
                         <?php endforeach; ?>
@@ -64,18 +64,23 @@
 
             <div class="user-details" style="display: none;">
                 <h2>UTILISATEUR <span class="user-name"></span></h2>
-                <div class="action-buttons">
-                    <button class="delete-user">SUPPRIMER UTILISATEUR</button>
-                </div>
                 <div class="ruches-list">
                     <!-- Les ruches seront injectées ici par JavaScript -->
+                </div>
+                <div class="action-buttons">
+                    <button class="delete-user">SUPPRIMER UTILISATEUR</button>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="js/dataruches.js"></script>
     <script>
+        // Charger les données JSON
+        <?php
+        $jsonContent = file_get_contents("js/dataruches.json");
+        echo "const ruches = " . $jsonContent . ";\n";
+        ?>
+
         document.addEventListener('DOMContentLoaded', function() {
             const userItems = document.querySelectorAll('.user-item');
             const userDetails = document.querySelector('.user-details');
@@ -83,8 +88,8 @@
             let currentUserId = null;
 
             // Récupérer toutes les ruches de la base de données
-            const allRuches = <?php echo json_encode(get_ruches()); ?>; //Attention ici seulement pour l'utilisateur 3
-            console.log('Ruches:', allRuches); // Pour déboguer
+            const allRuches = <?php echo json_encode(get_ruches()); ?>;
+            console.log('Ruches:', allRuches);
 
             userItems.forEach(item => {
                 item.addEventListener('click', function() {
@@ -103,7 +108,7 @@
 
                     if (userRuches && userRuches.length > 0) {
                         userRuches.forEach(ruche => {
-                            // Vérifier si les données de la ruche existent dans dataruches.js
+                            // Vérifier si les données de la ruche existent dans ruches
                             if (ruches[ruche.id]) {
                                 const rucheData = ruches[ruche.id];
                                 const lastData = rucheData.data[rucheData.data.length - 1];
@@ -113,26 +118,26 @@
                                 rucheElement.innerHTML = `
                                     <div class="ruche-header">
                                         <h3>RUCHE ${ruche.id} - ${ruche.nom_ruche}</h3>
-                                        <button class="delete-ruche" data-ruche="${ruche.id}">Supprimer</button>
                                     </div>
                                     <div class="ruche-data">
                                         <div class="data-item">
-                                            <span class="label">Température:</span>
+                                            <span class="label">Température :</span>
                                             <span class="value">${lastData.temperature}°C</span>
                                         </div>
                                         <div class="data-item">
-                                            <span class="label">Humidité:</span>
-                                            <span class="value">${lastData.humidite}%</span>
+                                            <span class="label">Humidité :</span>
+                                            <span class="value"> ${lastData.humidite}%</span>
                                         </div>
                                         <div class="data-item">
-                                            <span class="label">Poids:</span>
+                                            <span class="label">Poids :</span>
                                             <span class="value">${lastData.poids}kg</span>
                                         </div>
                                         <div class="data-item">
-                                            <span class="label">Fréquence:</span>
+                                            <span class="label">Fréquence :</span>
                                             <span class="value">${lastData.frequence}Hz</span>
                                         </div>
                                     </div>
+                                                                            <button class="delete-ruche" data-ruche="${ruche.id}">Supprimer</button>
                                 `;
                                 ruchesList.appendChild(rucheElement);
                             }

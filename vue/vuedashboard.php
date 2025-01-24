@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style/styledashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -67,6 +69,7 @@
 
                 <div class="profile">
                     <div class="profile-container">
+                        <span><?= htmlspecialchars($_SESSION["nom"]) ?></span>
                         <form method="post" action="index.php?action=update_photo" enctype="multipart/form-data" id="photo-form">
                             <div class="profile-image-container">
                                 <img src="assets/img/profiles/<?= !empty($_SESSION['photo_profil']) ? htmlspecialchars($_SESSION['photo_profil']) : 'default.png' ?>" alt="Photo de profil" class="profile-image">
@@ -76,7 +79,6 @@
                             </div>
                             <input type="file" name="photo" id="photo-input" accept="image/*" style="display: none;">
                         </form>
-                        <span>Hello <?= htmlspecialchars($_SESSION["nom"]) ?></span>
                     </div>
                 </div>
 
@@ -104,33 +106,45 @@
                 </div>
                 <!--A mettre dans un popup ou autre-->
                 <div id="formajoutruche" style="display: none;">
-                    <button class="quitter">Quitter le formulaire</button>
+                    <button class="quitter_form">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                     <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajout" ?>">
-                        <input type="text" name="id_ruche" placeholder="Id de votre ruche" value="" required>
+                        <input type="text" name="id_ruche" placeholder="ID de votre appareil" value="" required>
                         <input type="text" name="nom_ruche" placeholder="Nom pour votre ruche" value="" required>
                         <button type="submit" name="ruche" value="Valider" id="fermer">Envoyer la demande</button>
                     </form>
                 </div>
             <?php else: ?>
                 <p>Vous n'avez aucune ruche pour le moment.</p>
-                <a href="#" id="ajoutruche2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                    </svg></a>
                 <div id="formajoutruche" style="display: none;">
-                    <button class="quitter">Quitter le formulaire</button>
+                    <button class="quitter_form">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
                     <form method="post" action="<?= $_SERVER["PHP_SELF"] . "?action=ajout" ?>">
-                        <input type="text" name="id_ruche" placeholder="Id de votre ruche" value="" required>
+                        <input type="text" name="id_ruche" placeholder="ID de votre appareil" value="" required>
                         <input type="text" name="nom_ruche" placeholder="Nom pour votre ruche" value="" required>
                         <button type="submit" name="ruche" value="Valider" id="fermer">Envoyer la demande</button>
                     </form>
                 </div>
+                <a href="#" id="ajoutruche2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg></a>
             <?php endif;
             ?>
 
+            <!-- Nouvelle section carte -->
+
             <?php
             //Pour trouver les données du fichier dataruche.js
-            $filename = "js/dataruches.js";
+            $filename = "js/dataruches.json";
             if (file_exists($filename)) {
                 $filecontent = file_get_contents($filename);
 
@@ -147,7 +161,6 @@
                 }
                 return false;
             }, ARRAY_FILTER_USE_KEY);
-
 
             //Pour afficher les données d'une seule ruche
             $rucheData = null;
@@ -268,6 +281,13 @@
                             </div>
                             <div class="calendar-days"></div>
                         </div>
+                    </div>
+                    <div class="map-section">
+                        <h3>LOCALISATION DES RUCHES</h3>
+                        <div id="map"></div>
+                    </div>
+                    <div class="notes-ruches">
+                        <textarea name="" id=""></textarea>
                     </div>
                 </div>
             <?php elseif (isset($_GET['id'])): ?>
