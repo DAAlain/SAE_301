@@ -2,6 +2,7 @@
     font-family: "Inter", sans-serif;
     color: black;
     text-decoration: none;
+    scroll-behavior: smooth;
 }
 
 p {
@@ -247,7 +248,7 @@ table tr td {
 .page4 {
     position: relative;
     height: 100vh;
-    z-index: 0;
+    z-index: 2;
     display: flex;
     align-items: center;
 }
@@ -263,10 +264,12 @@ table tr td {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: 2;
+    z-index: 3;
 }
 
 .page4-container {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     height: 80%;
@@ -280,6 +283,8 @@ table tr td {
     margin-left: 10%;
     margin-top: 2%;
     max-width: 400px;
+    z-index: 4;
+    position: relative;
 }
 
 .page4-content h2 {
@@ -305,7 +310,6 @@ table tr td {
     font-weight: 400;
     border-radius: 30px;
     color: white;
-
 }
 
 .scroll-vertical {

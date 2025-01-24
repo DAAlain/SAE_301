@@ -22,8 +22,8 @@
         <header>
             <img src="assets/img/Logo.webp" alt="Logo bee connect" loading="lazy">
             <div class="header-milieu">
-                <a href="">ACCUEIL</a>
-                <a href="">LE PROJET</a>
+                <a href="index.php">ACCUEIL</a>
+                <a href="#page2">LE PROJET</a>
                 <a href="#page5">VOUS SENSIBILISER</a>
             </div>
             <div class="header-fin">
@@ -36,7 +36,7 @@
             <div class="content-gauche">
                 <h1>PROJET RUCHES CONNECTÉES</h1>
                 <p>Le projet <strong>“Ruches connectées” </strong>consiste à offrir aux apiculteurs des outils modernes pour surveiller la santé des ruches et optimiser leurs productions de miel tout en simplifiant le travail.</p>
-                <a href="">DÉCOUVRIR</a>
+                <a href="#page2">DÉCOUVRIR</a>
             </div>
             <div class="content-droite">
                 <img src="assets/img/abeille-page1.webp" alt="Abeille" loading="lazy">
@@ -126,7 +126,6 @@
                     <p>
                         Rejoignez nous et découvrez comment ce projet peut changer votre vie d’apiculteur en transformant la gestion de vos ruches et en garantissant leur santé à long terme.
                     </p>
-                    <a href="" class="content-details-cta">NOUS REJOINDRE</a>
                 </div>
             </div>
         </div>
@@ -162,7 +161,7 @@
     <footer>
         <div class="footer-container">
             <div class="logo">
-                <img src="assets/img/Logo.webp" alt="BeeConnect logo">
+                <a href="index.php"><img src="assets/img/Logo.webp" alt="BeeConnect logo"></a>
             </div>
             <div class="footer-section">
                 <h3>À propos</h3>
