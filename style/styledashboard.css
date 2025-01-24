@@ -557,10 +557,11 @@ canvas {
 }
 
 .notes-ruches textarea {
-    width: 100%;
-    height: 100%;
+    width: 99%;
+    height: 99%;
     border: black 1px solid;
     border-radius: 0 10px 10px 10px;
+    resize: none;
     
 }
 
