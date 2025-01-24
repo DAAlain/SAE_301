@@ -291,9 +291,22 @@
                     <div class="notes-ruches">
                         <div class="notes-header">
                             <h3>NOTES</h3>
-                            <button id="save-note" class="save-note-btn">Enregistrer</button>
+                            <div class="notes-actions">
+                                <button id="add-note" class="add-note-btn">Nouvelle note</button>
+                                <button id="add-new-note" class="save-note-btn" style="display: none;">Ajouter</button>
+                                <button id="save-note" class="save-note-btn" style="display: none;">Enregistrer</button>
+                            </div>
                         </div>
-                        <div id="editor"></div>
+                        <div class="notes-container">
+                            <div class="notes-sidebar">
+                                <div class="notes-list">
+                                    <!-- Les notes seront chargées dynamiquement ici -->
+                                </div>
+                            </div>
+                            <div class="notes-content">
+                                <div id="editor" style="display: none;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             <?php elseif (isset($_GET['id'])): ?>

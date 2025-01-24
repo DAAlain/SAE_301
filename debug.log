@@ -1,0 +1,637 @@
+2025-01-24 19:43:15 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:15 - Connexion BD réussie - []
+2025-01-24 19:43:17 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:17 - Connexion BD réussie - []
+2025-01-24 19:43:20 - Début de la requête - {"method":"POST"}
+2025-01-24 19:43:20 - Connexion BD réussie - []
+2025-01-24 19:43:20 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 19:43:20 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 19:43:20 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"update"}
+2025-01-24 19:43:20 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 19:43:20 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:20 - Connexion BD réussie - []
+2025-01-24 19:43:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:22 - Connexion BD réussie - []
+2025-01-24 19:43:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:22 - Connexion BD réussie - []
+2025-01-24 19:43:23 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:23 - Connexion BD réussie - []
+2025-01-24 19:43:23 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:23 - Connexion BD réussie - []
+2025-01-24 19:43:24 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:24 - Connexion BD réussie - []
+2025-01-24 19:43:24 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:24 - Connexion BD réussie - []
+2025-01-24 19:43:25 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:25 - Connexion BD réussie - []
+2025-01-24 19:43:25 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:25 - Connexion BD réussie - []
+2025-01-24 19:43:28 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:28 - Connexion BD réussie - []
+2025-01-24 19:43:28 - Début de la requête - {"method":"GET"}
+2025-01-24 19:43:28 - Connexion BD réussie - []
+2025-01-24 19:43:32 - Début de la requête - {"method":"POST"}
+2025-01-24 19:43:32 - Connexion BD réussie - []
+2025-01-24 19:43:32 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>Test 3<\/p>\",\"ruche_id\":\"1\",\"action\":\"add\"}"}
+2025-01-24 19:43:32 - Données décodées - {"postData":{"content":"<p>Test 3<\/p>","ruche_id":"1","action":"add"}}
+2025-01-24 19:43:32 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"add"}
+2025-01-24 19:43:32 - Erreur SQL lors de l'ajout - {"error":"SQLSTATE[HY000]: General error: 1364 Field 'created_at' doesn't have a default value"}
+2025-01-24 19:43:32 - Erreur finale - {"message":"Erreur lors de l'ajout de la note","file":"C:\\Users\\Alain Da-ros\\OneDrive\\Bureau\\SAE_301\\save_note.php","line":146}
+2025-01-24 19:47:06 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:06 - Connexion BD réussie - []
+2025-01-24 19:47:10 - Début de la requête - {"method":"POST"}
+2025-01-24 19:47:10 - Connexion BD réussie - []
+2025-01-24 19:47:10 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>Test 3<\/p>\",\"ruche_id\":\"1\",\"action\":\"add\"}"}
+2025-01-24 19:47:10 - Données décodées - {"postData":{"content":"<p>Test 3<\/p>","ruche_id":"1","action":"add"}}
+2025-01-24 19:47:10 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"add"}
+2025-01-24 19:47:10 - Note ajoutée avec succès - {"note_id":"3"}
+2025-01-24 19:47:10 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:10 - Connexion BD réussie - []
+2025-01-24 19:47:12 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:12 - Connexion BD réussie - []
+2025-01-24 19:47:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:13 - Connexion BD réussie - []
+2025-01-24 19:47:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:13 - Connexion BD réussie - []
+2025-01-24 19:47:19 - Début de la requête - {"method":"POST"}
+2025-01-24 19:47:19 - Connexion BD réussie - []
+2025-01-24 19:47:19 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>Test 4<\/p>\",\"ruche_id\":\"1\",\"note_id\":3,\"action\":\"update\"}"}
+2025-01-24 19:47:19 - Données décodées - {"postData":{"content":"<p>Test 4<\/p>","ruche_id":"1","note_id":3,"action":"update"}}
+2025-01-24 19:47:19 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"update"}
+2025-01-24 19:47:19 - Note mise à jour avec succès - {"note_id":3}
+2025-01-24 19:47:19 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:19 - Connexion BD réussie - []
+2025-01-24 19:47:21 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:21 - Connexion BD réussie - []
+2025-01-24 19:47:21 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:21 - Connexion BD réussie - []
+2025-01-24 19:47:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:47:22 - Connexion BD réussie - []
+2025-01-24 19:48:55 - Début de la requête - {"method":"GET"}
+2025-01-24 19:48:55 - Connexion BD réussie - []
+2025-01-24 19:48:55 - Début de la requête - {"method":"GET"}
+2025-01-24 19:48:55 - Connexion BD réussie - []
+2025-01-24 19:48:58 - Début de la requête - {"method":"POST"}
+2025-01-24 19:48:58 - Connexion BD réussie - []
+2025-01-24 19:48:58 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 5<\/p>\",\"ruche_id\":\"1\",\"note_id\":1,\"action\":\"update\"}"}
+2025-01-24 19:48:58 - Données décodées - {"postData":{"content":"<p>test 5<\/p>","ruche_id":"1","note_id":1,"action":"update"}}
+2025-01-24 19:48:58 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"update"}
+2025-01-24 19:48:58 - Note mise à jour avec succès - {"note_id":1}
+2025-01-24 19:48:58 - Début de la requête - {"method":"GET"}
+2025-01-24 19:48:58 - Connexion BD réussie - []
+2025-01-24 19:49:00 - Début de la requête - {"method":"GET"}
+2025-01-24 19:49:00 - Connexion BD réussie - []
+2025-01-24 19:49:00 - Début de la requête - {"method":"GET"}
+2025-01-24 19:49:00 - Connexion BD réussie - []
+2025-01-24 19:49:01 - Début de la requête - {"method":"GET"}
+2025-01-24 19:49:01 - Connexion BD réussie - []
+2025-01-24 19:51:07 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:07 - Connexion BD réussie - []
+2025-01-24 19:51:10 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:10 - Connexion BD réussie - []
+2025-01-24 19:51:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:13 - Connexion BD réussie - []
+2025-01-24 19:51:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:13 - Connexion BD réussie - []
+2025-01-24 19:51:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:13 - Connexion BD réussie - []
+2025-01-24 19:51:14 - Début de la requête - {"method":"GET"}
+2025-01-24 19:51:14 - Connexion BD réussie - []
+2025-01-24 19:51:18 - Début de la requête - {"method":"POST"}
+2025-01-24 19:51:18 - Connexion BD réussie - []
+2025-01-24 19:51:18 - Données brutes reçues - {"raw_input":"{\"note_id\":1,\"action\":\"delete\"}"}
+2025-01-24 19:51:18 - Données décodées - {"postData":{"note_id":1,"action":"delete"}}
+2025-01-24 19:51:18 - Erreur finale - {"message":"Contenu de la note manquant","file":"C:\\Users\\Alain Da-ros\\OneDrive\\Bureau\\SAE_301\\save_note.php","line":107}
+2025-01-24 19:52:32 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:32 - Connexion BD réussie - []
+2025-01-24 19:52:33 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:33 - Connexion BD réussie - []
+2025-01-24 19:52:34 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:34 - Connexion BD réussie - []
+2025-01-24 19:52:35 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:35 - Connexion BD réussie - []
+2025-01-24 19:52:35 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:35 - Connexion BD réussie - []
+2025-01-24 19:52:36 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:36 - Connexion BD réussie - []
+2025-01-24 19:52:36 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:36 - Connexion BD réussie - []
+2025-01-24 19:52:38 - Début de la requête - {"method":"POST"}
+2025-01-24 19:52:38 - Connexion BD réussie - []
+2025-01-24 19:52:38 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 1<\/p>\",\"ruche_id\":\"1\",\"note_id\":1,\"action\":\"update\"}"}
+2025-01-24 19:52:38 - Données décodées - {"postData":{"content":"<p>test 1<\/p>","ruche_id":"1","note_id":1,"action":"update"}}
+2025-01-24 19:52:38 - Données validées - {"content_length":13,"ruche_id":1,"user_id":3,"action":"update"}
+2025-01-24 19:52:38 - Note mise à jour avec succès - {"note_id":1}
+2025-01-24 19:52:38 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:38 - Connexion BD réussie - []
+2025-01-24 19:52:46 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:46 - Connexion BD réussie - []
+2025-01-24 19:52:47 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:47 - Connexion BD réussie - []
+2025-01-24 19:52:48 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:48 - Connexion BD réussie - []
+2025-01-24 19:52:48 - Début de la requête - {"method":"GET"}
+2025-01-24 19:52:48 - Connexion BD réussie - []
+2025-01-24 19:52:52 - Début de la requête - {"method":"POST"}
+2025-01-24 19:52:52 - Connexion BD réussie - []
+2025-01-24 19:52:52 - Données brutes reçues - {"raw_input":"{\"note_id\":1,\"action\":\"delete\"}"}
+2025-01-24 19:52:52 - Données décodées - {"postData":{"note_id":1,"action":"delete"}}
+2025-01-24 19:52:52 - Erreur finale - {"message":"Contenu de la note manquant","file":"C:\\Users\\Alain Da-ros\\OneDrive\\Bureau\\SAE_301\\save_note.php","line":107}
+2025-01-24 19:54:10 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:10 - Connexion BD réussie - []
+2025-01-24 19:54:15 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:15 - Connexion BD réussie - []
+2025-01-24 19:54:16 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:16 - Connexion BD réussie - []
+2025-01-24 19:54:20 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:20 - Connexion BD réussie - []
+2025-01-24 19:54:20 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:20 - Connexion BD réussie - []
+2025-01-24 19:54:21 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:21 - Connexion BD réussie - []
+2025-01-24 19:54:21 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:21 - Connexion BD réussie - []
+2025-01-24 19:54:21 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:21 - Connexion BD réussie - []
+2025-01-24 19:54:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:22 - Connexion BD réussie - []
+2025-01-24 19:54:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:22 - Connexion BD réussie - []
+2025-01-24 19:54:23 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:23 - Connexion BD réussie - []
+2025-01-24 19:54:24 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:24 - Connexion BD réussie - []
+2025-01-24 19:54:24 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:24 - Connexion BD réussie - []
+2025-01-24 19:54:24 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:24 - Connexion BD réussie - []
+2025-01-24 19:54:25 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:25 - Connexion BD réussie - []
+2025-01-24 19:54:25 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:25 - Connexion BD réussie - []
+2025-01-24 19:54:27 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:27 - Connexion BD réussie - []
+2025-01-24 19:54:27 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:27 - Connexion BD réussie - []
+2025-01-24 19:54:28 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:28 - Connexion BD réussie - []
+2025-01-24 19:54:28 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:28 - Connexion BD réussie - []
+2025-01-24 19:54:29 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:29 - Connexion BD réussie - []
+2025-01-24 19:54:30 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:30 - Connexion BD réussie - []
+2025-01-24 19:54:31 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:31 - Connexion BD réussie - []
+2025-01-24 19:54:32 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:32 - Connexion BD réussie - []
+2025-01-24 19:54:32 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:32 - Connexion BD réussie - []
+2025-01-24 19:54:36 - Début de la requête - {"method":"POST"}
+2025-01-24 19:54:36 - Connexion BD réussie - []
+2025-01-24 19:54:36 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 1000<\/p>\",\"ruche_id\":\"1\",\"note_id\":1,\"action\":\"update\"}"}
+2025-01-24 19:54:36 - Données décodées - {"postData":{"content":"<p>test 1000<\/p>","ruche_id":"1","note_id":1,"action":"update"}}
+2025-01-24 19:54:36 - Note mise à jour avec succès - {"note_id":1}
+2025-01-24 19:54:36 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:36 - Connexion BD réussie - []
+2025-01-24 19:54:43 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:43 - Connexion BD réussie - []
+2025-01-24 19:54:46 - Début de la requête - {"method":"POST"}
+2025-01-24 19:54:46 - Connexion BD réussie - []
+2025-01-24 19:54:46 - Données brutes reçues - {"raw_input":"{\"note_id\":1,\"action\":\"delete\"}"}
+2025-01-24 19:54:46 - Données décodées - {"postData":{"note_id":1,"action":"delete"}}
+2025-01-24 19:54:46 - Début de la requête - {"method":"GET"}
+2025-01-24 19:54:46 - Connexion BD réussie - []
+2025-01-24 19:55:22 - Début de la requête - {"method":"GET"}
+2025-01-24 19:55:22 - Connexion BD réussie - []
+2025-01-24 19:55:25 - Début de la requête - {"method":"POST"}
+2025-01-24 19:55:25 - Connexion BD réussie - []
+2025-01-24 19:55:25 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>Test 5<\/p>\",\"ruche_id\":\"1\",\"note_id\":3,\"action\":\"update\"}"}
+2025-01-24 19:55:25 - Données décodées - {"postData":{"content":"<p>Test 5<\/p>","ruche_id":"1","note_id":3,"action":"update"}}
+2025-01-24 19:55:25 - Note mise à jour avec succès - {"note_id":3}
+2025-01-24 19:55:25 - Début de la requête - {"method":"GET"}
+2025-01-24 19:55:25 - Connexion BD réussie - []
+2025-01-24 19:56:13 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:13 - Connexion BD réussie - []
+2025-01-24 19:56:14 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:14 - Connexion BD réussie - []
+2025-01-24 19:56:17 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:17 - Connexion BD réussie - []
+2025-01-24 19:56:30 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:30 - Connexion BD réussie - []
+2025-01-24 19:56:30 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:30 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:44 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:44 - Connexion BD réussie - []
+2025-01-24 19:56:45 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:45 - Connexion BD réussie - []
+2025-01-24 19:56:45 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:45 - Connexion BD réussie - []
+2025-01-24 19:56:47 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:47 - Connexion BD réussie - []
+2025-01-24 19:56:52 - Début de la requête - {"method":"POST"}
+2025-01-24 19:56:52 - Connexion BD réussie - []
+2025-01-24 19:56:52 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>Test 10<\/p>\",\"ruche_id\":\"1\",\"note_id\":3,\"action\":\"update\"}"}
+2025-01-24 19:56:52 - Données décodées - {"postData":{"content":"<p>Test 10<\/p>","ruche_id":"1","note_id":3,"action":"update"}}
+2025-01-24 19:56:52 - Note mise à jour avec succès - {"note_id":3}
+2025-01-24 19:56:52 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:52 - Connexion BD réussie - []
+2025-01-24 19:56:58 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:58 - Connexion BD réussie - []
+2025-01-24 19:56:59 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:59 - Connexion BD réussie - []
+2025-01-24 19:56:59 - Début de la requête - {"method":"GET"}
+2025-01-24 19:56:59 - Connexion BD réussie - []
+2025-01-24 19:57:00 - Début de la requête - {"method":"GET"}
+2025-01-24 19:57:00 - Connexion BD réussie - []
+2025-01-24 19:57:00 - Début de la requête - {"method":"GET"}
+2025-01-24 19:57:00 - Connexion BD réussie - []
+2025-01-24 19:57:02 - Début de la requête - {"method":"GET"}
+2025-01-24 19:57:02 - Connexion BD réussie - []
+2025-01-24 19:58:15 - Début de la requête - {"method":"GET"}
+2025-01-24 19:58:15 - Connexion BD réussie - []
+2025-01-24 19:58:17 - Début de la requête - {"method":"GET"}
+2025-01-24 19:58:17 - Connexion BD réussie - []
+2025-01-24 19:59:26 - Début de la requête - {"method":"GET"}
+2025-01-24 19:59:26 - Connexion BD réussie - []
+2025-01-24 19:59:27 - Début de la requête - {"method":"GET"}
+2025-01-24 19:59:27 - Connexion BD réussie - []
+2025-01-24 20:00:36 - Début de la requête - {"method":"GET"}
+2025-01-24 20:00:36 - Connexion BD réussie - []
+2025-01-24 20:00:46 - Début de la requête - {"method":"GET"}
+2025-01-24 20:00:46 - Connexion BD réussie - []
+2025-01-24 20:02:01 - Début de la requête - {"method":"GET"}
+2025-01-24 20:02:01 - Connexion BD réussie - []
+2025-01-24 20:03:04 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:04 - Connexion BD réussie - []
+2025-01-24 20:03:07 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:07 - Connexion BD réussie - []
+2025-01-24 20:03:07 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:07 - Connexion BD réussie - []
+2025-01-24 20:03:07 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:07 - Connexion BD réussie - []
+2025-01-24 20:03:08 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:08 - Connexion BD réussie - []
+2025-01-24 20:03:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:09 - Connexion BD réussie - []
+2025-01-24 20:03:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:10 - Connexion BD réussie - []
+2025-01-24 20:03:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:10 - Connexion BD réussie - []
+2025-01-24 20:03:14 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:14 - Connexion BD réussie - []
+2025-01-24 20:03:14 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:14 - Connexion BD réussie - []
+2025-01-24 20:03:14 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:14 - Connexion BD réussie - []
+2025-01-24 20:03:14 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:14 - Connexion BD réussie - []
+2025-01-24 20:03:33 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:33 - Connexion BD réussie - []
+2025-01-24 20:03:33 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:33 - Connexion BD réussie - []
+2025-01-24 20:03:34 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:34 - Connexion BD réussie - []
+2025-01-24 20:03:34 - Début de la requête - {"method":"GET"}
+2025-01-24 20:03:34 - Connexion BD réussie - []
+2025-01-24 20:04:42 - Début de la requête - {"method":"GET"}
+2025-01-24 20:04:42 - Connexion BD réussie - []
+2025-01-24 20:06:01 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:01 - Connexion BD réussie - []
+2025-01-24 20:06:03 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:03 - Connexion BD réussie - []
+2025-01-24 20:06:05 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:05 - Connexion BD réussie - []
+2025-01-24 20:06:05 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:05 - Connexion BD réussie - []
+2025-01-24 20:06:05 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:05 - Connexion BD réussie - []
+2025-01-24 20:06:05 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:05 - Connexion BD réussie - []
+2025-01-24 20:06:06 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:06 - Connexion BD réussie - []
+2025-01-24 20:06:07 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:07 - Connexion BD réussie - []
+2025-01-24 20:06:15 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:15 - Connexion BD réussie - []
+2025-01-24 20:06:17 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:17 - Connexion BD réussie - []
+2025-01-24 20:06:22 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:22 - Connexion BD réussie - []
+2025-01-24 20:06:22 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:22 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:22 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:22 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:22 - Connexion BD réussie - []
+2025-01-24 20:06:23 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:23 - Connexion BD réussie - []
+2025-01-24 20:06:23 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:23 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:23 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:23 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:23 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:24 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:24 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:24 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:24 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:24 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:24 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:24 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:24 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:24 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:24 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:24 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:24 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:24 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:24 - Connexion BD réussie - []
+2025-01-24 20:06:25 - Début de la requête - {"method":"POST"}
+2025-01-24 20:06:25 - Connexion BD réussie - []
+2025-01-24 20:06:25 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 2<\/p>\",\"ruche_id\":\"1\",\"note_id\":2,\"action\":\"update\"}"}
+2025-01-24 20:06:25 - Données décodées - {"postData":{"content":"<p>test 2<\/p>","ruche_id":"1","note_id":2,"action":"update"}}
+2025-01-24 20:06:25 - Note mise à jour avec succès - {"note_id":2}
+2025-01-24 20:06:25 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:25 - Connexion BD réussie - []
+2025-01-24 20:06:33 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:33 - Connexion BD réussie - []
+2025-01-24 20:06:48 - Début de la requête - {"method":"GET"}
+2025-01-24 20:06:48 - Connexion BD réussie - []
+2025-01-24 20:07:02 - Début de la requête - {"method":"GET"}
+2025-01-24 20:07:02 - Connexion BD réussie - []
+2025-01-24 20:07:08 - Début de la requête - {"method":"GET"}
+2025-01-24 20:07:08 - Connexion BD réussie - []
+2025-01-24 20:08:00 - Début de la requête - {"method":"POST"}
+2025-01-24 20:08:00 - Connexion BD réussie - []
+2025-01-24 20:08:00 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>test 1<\/p>\",\"ruche_id\":\"1\",\"action\":\"add\"}"}
+2025-01-24 20:08:00 - Données décodées - {"postData":{"content":"<p>test 1<\/p>","ruche_id":"1","action":"add"}}
+2025-01-24 20:08:00 - Note ajoutée avec succès - {"note_id":"4"}
+2025-01-24 20:08:00 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:00 - Connexion BD réussie - []
+2025-01-24 20:08:02 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:02 - Connexion BD réussie - []
+2025-01-24 20:08:03 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:03 - Connexion BD réussie - []
+2025-01-24 20:08:04 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:04 - Connexion BD réussie - []
+2025-01-24 20:08:06 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:06 - Connexion BD réussie - []
+2025-01-24 20:08:07 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:07 - Connexion BD réussie - []
+2025-01-24 20:08:08 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:08 - Connexion BD réussie - []
+2025-01-24 20:08:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:09 - Connexion BD réussie - []
+2025-01-24 20:08:10 - Début de la requête - {"method":"POST"}
+2025-01-24 20:08:10 - Connexion BD réussie - []
+2025-01-24 20:08:10 - Données brutes reçues - {"raw_input":"{\"note_id\":4,\"action\":\"delete\"}"}
+2025-01-24 20:08:10 - Données décodées - {"postData":{"note_id":4,"action":"delete"}}
+2025-01-24 20:08:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:10 - Connexion BD réussie - []
+2025-01-24 20:08:13 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:13 - Connexion BD réussie - []
+2025-01-24 20:08:20 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:20 - Connexion BD réussie - []
+2025-01-24 20:08:22 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:22 - Connexion BD réussie - []
+2025-01-24 20:08:23 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:23 - Connexion BD réussie - []
+2025-01-24 20:08:23 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:23 - Connexion BD réussie - []
+2025-01-24 20:08:24 - Début de la requête - {"method":"GET"}
+2025-01-24 20:08:24 - Connexion BD réussie - []
+2025-01-24 20:09:22 - Début de la requête - {"method":"GET"}
+2025-01-24 20:09:22 - Connexion BD réussie - []
+2025-01-24 20:09:59 - Début de la requête - {"method":"GET"}
+2025-01-24 20:09:59 - Connexion BD réussie - []
+2025-01-24 20:10:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:09 - Connexion BD réussie - []
+2025-01-24 20:10:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:10 - Connexion BD réussie - []
+2025-01-24 20:10:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:10 - Connexion BD réussie - []
+2025-01-24 20:10:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:10 - Connexion BD réussie - []
+2025-01-24 20:10:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:11 - Connexion BD réussie - []
+2025-01-24 20:10:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:11 - Connexion BD réussie - []
+2025-01-24 20:10:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:11 - Connexion BD réussie - []
+2025-01-24 20:10:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:11 - Connexion BD réussie - []
+2025-01-24 20:10:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:29 - Connexion BD réussie - []
+2025-01-24 20:10:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:31 - Connexion BD réussie - []
+2025-01-24 20:10:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:31 - Connexion BD réussie - []
+2025-01-24 20:10:38 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:38 - Connexion BD réussie - []
+2025-01-24 20:10:39 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:39 - Connexion BD réussie - []
+2025-01-24 20:10:41 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:41 - Connexion BD réussie - []
+2025-01-24 20:10:42 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:42 - Connexion BD réussie - []
+2025-01-24 20:10:43 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:43 - Connexion BD réussie - []
+2025-01-24 20:10:45 - Début de la requête - {"method":"GET"}
+2025-01-24 20:10:45 - Connexion BD réussie - []
+2025-01-24 20:11:46 - Début de la requête - {"method":"GET"}
+2025-01-24 20:11:46 - Connexion BD réussie - []
+2025-01-24 20:12:42 - Début de la requête - {"method":"GET"}
+2025-01-24 20:12:42 - Connexion BD réussie - []
+2025-01-24 20:12:47 - Début de la requête - {"method":"GET"}
+2025-01-24 20:12:47 - Connexion BD réussie - []
+2025-01-24 20:12:49 - Début de la requête - {"method":"GET"}
+2025-01-24 20:12:49 - Connexion BD réussie - []
+2025-01-24 20:13:18 - Début de la requête - {"method":"GET"}
+2025-01-24 20:13:18 - Connexion BD réussie - []
+2025-01-24 20:14:10 - Début de la requête - {"method":"GET"}
+2025-01-24 20:14:10 - Connexion BD réussie - []
+2025-01-24 20:14:12 - Début de la requête - {"method":"GET"}
+2025-01-24 20:14:12 - Connexion BD réussie - []
+2025-01-24 20:15:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:15:30 - Connexion BD réussie - []
+2025-01-24 20:15:34 - Début de la requête - {"method":"GET"}
+2025-01-24 20:15:34 - Connexion BD réussie - []
+2025-01-24 20:15:35 - Début de la requête - {"method":"GET"}
+2025-01-24 20:15:35 - Connexion BD réussie - []
+2025-01-24 20:15:35 - Début de la requête - {"method":"GET"}
+2025-01-24 20:15:35 - Connexion BD réussie - []
+2025-01-24 20:16:06 - Début de la requête - {"method":"GET"}
+2025-01-24 20:16:06 - Connexion BD réussie - []
+2025-01-24 20:18:50 - Début de la requête - {"method":"GET"}
+2025-01-24 20:18:50 - Connexion BD réussie - []
+2025-01-24 20:19:26 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:26 - Connexion BD réussie - []
+2025-01-24 20:19:27 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:27 - Connexion BD réussie - []
+2025-01-24 20:19:28 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:28 - Connexion BD réussie - []
+2025-01-24 20:19:28 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:28 - Connexion BD réussie - []
+2025-01-24 20:19:28 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:28 - Connexion BD réussie - []
+2025-01-24 20:19:28 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:28 - Connexion BD réussie - []
+2025-01-24 20:19:28 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:28 - Connexion BD réussie - []
+2025-01-24 20:19:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:29 - Connexion BD réussie - []
+2025-01-24 20:19:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:29 - Connexion BD réussie - []
+2025-01-24 20:19:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:29 - Connexion BD réussie - []
+2025-01-24 20:19:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:29 - Connexion BD réussie - []
+2025-01-24 20:19:29 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:29 - Connexion BD réussie - []
+2025-01-24 20:19:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:30 - Connexion BD réussie - []
+2025-01-24 20:19:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:30 - Connexion BD réussie - []
+2025-01-24 20:19:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:30 - Connexion BD réussie - []
+2025-01-24 20:19:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:30 - Connexion BD réussie - []
+2025-01-24 20:19:30 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:30 - Connexion BD réussie - []
+2025-01-24 20:19:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:31 - Connexion BD réussie - []
+2025-01-24 20:19:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:31 - Connexion BD réussie - []
+2025-01-24 20:19:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:31 - Connexion BD réussie - []
+2025-01-24 20:19:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:31 - Connexion BD réussie - []
+2025-01-24 20:19:31 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:31 - Connexion BD réussie - []
+2025-01-24 20:19:32 - Début de la requête - {"method":"GET"}
+2025-01-24 20:19:32 - Connexion BD réussie - []
+2025-01-24 20:21:55 - Début de la requête - {"method":"GET"}
+2025-01-24 20:21:55 - Connexion BD réussie - []
+2025-01-24 20:23:02 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:02 - Connexion BD réussie - []
+2025-01-24 20:23:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:09 - Connexion BD réussie - []
+2025-01-24 20:23:12 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:12 - Connexion BD réussie - []
+2025-01-24 20:23:13 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:13 - Connexion BD réussie - []
+2025-01-24 20:23:14 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:14 - Connexion BD réussie - []
+2025-01-24 20:23:15 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:15 - Connexion BD réussie - []
+2025-01-24 20:23:20 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:20 - Connexion BD réussie - []
+2025-01-24 20:23:42 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:42 - Connexion BD réussie - []
+2025-01-24 20:23:42 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:42 - Connexion BD réussie - []
+2025-01-24 20:23:43 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:43 - Connexion BD réussie - []
+2025-01-24 20:23:48 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:48 - Connexion BD réussie - []
+2025-01-24 20:23:59 - Début de la requête - {"method":"GET"}
+2025-01-24 20:23:59 - Connexion BD réussie - []
+2025-01-24 20:24:00 - Début de la requête - {"method":"GET"}
+2025-01-24 20:24:00 - Connexion BD réussie - []
+2025-01-24 20:24:01 - Début de la requête - {"method":"GET"}
+2025-01-24 20:24:01 - Connexion BD réussie - []
+2025-01-24 20:24:02 - Début de la requête - {"method":"GET"}
+2025-01-24 20:24:02 - Connexion BD réussie - []
+2025-01-24 20:24:04 - Début de la requête - {"method":"GET"}
+2025-01-24 20:24:04 - Connexion BD réussie - []
+2025-01-24 20:24:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:24:09 - Connexion BD réussie - []
+2025-01-24 20:25:03 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:03 - Connexion BD réussie - []
+2025-01-24 20:25:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:11 - Connexion BD réussie - []
+2025-01-24 20:25:36 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:36 - Connexion BD réussie - []
+2025-01-24 20:25:38 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:38 - Connexion BD réussie - []
+2025-01-24 20:25:38 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:38 - Connexion BD réussie - []
+2025-01-24 20:25:39 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:39 - Connexion BD réussie - []
+2025-01-24 20:25:39 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:39 - Connexion BD réussie - []
+2025-01-24 20:25:44 - Début de la requête - {"method":"POST"}
+2025-01-24 20:25:44 - Connexion BD réussie - []
+2025-01-24 20:25:44 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>TEst infini<\/p>\",\"ruche_id\":\"1\",\"action\":\"add\"}"}
+2025-01-24 20:25:44 - Données décodées - {"postData":{"content":"<p>TEst infini<\/p>","ruche_id":"1","action":"add"}}
+2025-01-24 20:25:44 - Note ajoutée avec succès - {"note_id":"5"}
+2025-01-24 20:25:44 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:44 - Connexion BD réussie - []
+2025-01-24 20:25:45 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:45 - Connexion BD réussie - []
+2025-01-24 20:25:46 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:46 - Connexion BD réussie - []
+2025-01-24 20:25:48 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:48 - Connexion BD réussie - []
+2025-01-24 20:25:49 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:49 - Connexion BD réussie - []
+2025-01-24 20:25:50 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:50 - Connexion BD réussie - []
+2025-01-24 20:25:52 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:52 - Connexion BD réussie - []
+2025-01-24 20:25:52 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:52 - Connexion BD réussie - []
+2025-01-24 20:25:52 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:52 - Connexion BD réussie - []
+2025-01-24 20:25:54 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:54 - Connexion BD réussie - []
+2025-01-24 20:25:55 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:55 - Connexion BD réussie - []
+2025-01-24 20:25:56 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:56 - Connexion BD réussie - []
+2025-01-24 20:25:57 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:57 - Connexion BD réussie - []
+2025-01-24 20:25:57 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:57 - Connexion BD réussie - []
+2025-01-24 20:25:58 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:58 - Connexion BD réussie - []
+2025-01-24 20:25:59 - Début de la requête - {"method":"GET"}
+2025-01-24 20:25:59 - Connexion BD réussie - []
+2025-01-24 20:26:01 - Début de la requête - {"method":"GET"}
+2025-01-24 20:26:01 - Connexion BD réussie - []
+2025-01-24 20:26:09 - Début de la requête - {"method":"GET"}
+2025-01-24 20:26:09 - Connexion BD réussie - []
+2025-01-24 20:26:13 - Début de la requête - {"method":"GET"}
+2025-01-24 20:26:13 - Connexion BD réussie - []
+2025-01-24 20:27:11 - Début de la requête - {"method":"GET"}
+2025-01-24 20:27:11 - Connexion BD réussie - []
+2025-01-24 20:27:13 - Début de la requête - {"method":"GET"}
+2025-01-24 20:27:13 - Connexion BD réussie - []
+2025-01-24 20:27:15 - Début de la requête - {"method":"GET"}
+2025-01-24 20:27:15 - Connexion BD réussie - []
+2025-01-24 20:27:16 - Début de la requête - {"method":"GET"}
+2025-01-24 20:27:16 - Connexion BD réussie - []
+2025-01-24 20:27:22 - Début de la requête - {"method":"GET"}
+2025-01-24 20:27:22 - Connexion BD réussie - []

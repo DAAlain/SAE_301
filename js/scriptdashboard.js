@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// Initialisation de Quill.js
+// Initialisation de Quill.js et gestion des notes
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const rucheId = urlParams.get('id');
@@ -348,36 +348,219 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Charger les notes existantes
-    fetch(`save_note.php?ruche_id=${rucheId}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.content) {
-                quill.root.innerHTML = data.content;
-            }
-        })
-        .catch(error => console.error('Erreur:', error));
+    const notesList = document.querySelector('.notes-list');
+    const editor = document.getElementById('editor');
+    let currentNoteId = null;
 
-    // Gérer la sauvegarde des notes
-    document.getElementById('save-note').addEventListener('click', function() {
+    // Charger la liste des notes
+    function loadNotesList() {
+        fetch(`save_note.php?action=list&ruche_id=${rucheId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (!data || !data.success) {
+                    throw new Error(data?.error || 'Erreur lors du chargement des notes');
+                }
+                
+                notesList.innerHTML = '';
+                
+                if (!data.notes || data.notes.length === 0) {
+                    notesList.innerHTML = '<div class="note-item empty">Aucune note</div>';
+                    return;
+                }
+
+                data.notes.forEach(note => {
+                    const noteItem = document.createElement('div');
+                    noteItem.className = 'note-item';
+                    noteItem.dataset.noteId = note.id;
+                    noteItem.onclick = () => loadNote(note.id);
+                    
+                    // Ligne principale contenant le titre et le bouton de suppression
+                    const mainLine = document.createElement('div');
+                    mainLine.className = 'note-main-line';
+                    
+                    // Contenu de la note (titre)
+                    const noteContent = document.createElement('div');
+                    noteContent.className = 'note-content';
+                    noteContent.textContent = note.title || `Note du ${new Date(note.created_at).toLocaleDateString()}`;
+                    
+                    // Bouton de suppression
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'delete-note-btn';
+                    deleteButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                    
+                    // Conteneur de confirmation
+                    const confirmDelete = document.createElement('div');
+                    confirmDelete.className = 'confirm-delete';
+                    confirmDelete.innerHTML = `
+                        <span>Confirmer la suppression ?</span>
+                        <button class="confirm-yes">Oui</button>
+                        <button class="confirm-no">Non</button>
+                    `;
+                    
+                    // Assemblage des éléments
+                    mainLine.appendChild(noteContent);
+                    mainLine.appendChild(deleteButton);
+                    noteItem.appendChild(mainLine);
+                    noteItem.appendChild(confirmDelete);
+                    
+                    // Gestion des événements
+                    deleteButton.onclick = (e) => {
+                        e.stopPropagation();
+                        confirmDelete.style.display = 'flex';
+                        deleteButton.style.display = 'none';
+                    };
+                    
+                    confirmDelete.onclick = (e) => {
+                        e.stopPropagation();
+                    };
+                    
+                    confirmDelete.querySelector('.confirm-yes').onclick = (e) => {
+                        e.stopPropagation();
+                        deleteNote(note.id);
+                    };
+                    
+                    confirmDelete.querySelector('.confirm-no').onclick = (e) => {
+                        e.stopPropagation();
+                        confirmDelete.style.display = 'none';
+                        deleteButton.style.display = 'flex';
+                    };
+                    
+                    notesList.appendChild(noteItem);
+                });
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                notesList.innerHTML = '<div class="note-item error">Erreur de chargement</div>';
+            });
+    }
+
+    // Charger une note spécifique
+    function loadNote(noteId) {
+        currentNoteId = noteId;
+        fetch(`save_note.php?action=get&note_id=${noteId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.content) {
+                    quill.root.innerHTML = data.content;
+                    editor.style.display = 'block';
+                    // Afficher le bouton enregistrer et cacher le bouton ajouter
+                    document.getElementById('add-new-note').style.display = 'none';
+                    document.getElementById('save-note').style.display = 'block';
+                }
+                // Mettre à jour la sélection visuelle
+                document.querySelectorAll('.note-item').forEach(item => {
+                    item.classList.toggle('active', item.dataset.noteId === noteId);
+                });
+            })
+            .catch(error => console.error('Erreur:', error));
+    }
+
+    // Gérer le bouton "Nouvelle note"
+    document.getElementById('add-note').addEventListener('click', function() {
+        currentNoteId = null;
+        quill.root.innerHTML = '';
+        editor.style.display = 'block';
+        // Désélectionner la note active
+        document.querySelectorAll('.note-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        // Afficher le bouton ajouter et cacher le bouton enregistrer
+        document.getElementById('add-new-note').style.display = 'block';
+        document.getElementById('save-note').style.display = 'none';
+    });
+
+    // Gérer l'ajout d'une nouvelle note
+    document.getElementById('add-new-note').addEventListener('click', function() {
         const content = quill.root.innerHTML;
+        const urlParams = new URLSearchParams(window.location.search);
+        const rucheId = urlParams.get('id');
         
         fetch('save_note.php', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
+                'Content-Type': 'application/json',
             },
-            body: `content=${encodeURIComponent(content)}&ruche_id=${rucheId}`
+            body: JSON.stringify({
+                content: content,
+                ruche_id: rucheId,
+                action: 'add'
+            })
         })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Note enregistrée avec succès !');
+                loadNotesList();
+                editor.style.display = 'none';
+                document.getElementById('add-new-note').style.display = 'none';
             }
         })
         .catch(error => {
             console.error('Erreur:', error);
-            alert('Erreur lors de l\'enregistrement de la note');
         });
     });
+
+    // Gérer la modification d'une note existante
+    document.getElementById('save-note').addEventListener('click', function() {
+        if (!currentNoteId) return;
+
+        const content = quill.root.innerHTML;
+        const urlParams = new URLSearchParams(window.location.search);
+        const rucheId = urlParams.get('id');
+
+        fetch('save_note.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                content: content,
+                ruche_id: rucheId,
+                note_id: currentNoteId,
+                action: 'update'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                loadNotesList();
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+    });
+
+    // Fonction pour supprimer une note
+    function deleteNote(noteId) {
+        fetch('save_note.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                note_id: noteId,
+                action: 'delete'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                loadNotesList();
+                editor.style.display = 'none';
+                document.getElementById('add-new-note').style.display = 'none';
+                document.getElementById('save-note').style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+    }
+
+    // Charger la liste des notes au démarrage
+    loadNotesList();
 });

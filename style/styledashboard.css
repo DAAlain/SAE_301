@@ -588,29 +588,170 @@ canvas {
     margin-bottom: 20px;
 }
 
-.notes-header h3 {
-    font-family: "Bakbak One", serif;
-    font-weight: 500;
-    font-size: 25px;
+.notes-actions {
+    display: flex;
+    gap: 10px;
 }
 
-.save-note-btn {
+.notes-container {
+    display: flex;
+    gap: 20px;
+    height: 400px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.notes-sidebar {
+    width: 300px;
+    background: #f5f5f5;
+    overflow-y: auto;
+    border-right: 1px solid #e0e0e0;
+}
+
+.notes-list {
+    padding: 10px;
+}
+
+.note-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.note-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.note-item.active {
+    border-left: 4px solid #FFA600;
+    background: #fff5e6;
+}
+
+.note-main-line {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.note-content {
+    flex-grow: 1;
+    font-size: 14px;
+    color: #333;
+}
+
+.delete-note-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #ff4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: auto;
+}
+
+.note-item:hover .delete-note-btn {
+    opacity: 0.7;
+}
+
+.delete-note-btn:hover {
+    opacity: 1 !important;
+    color: #ff0000;
+}
+
+.confirm-delete {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #fff5e6;
+    border-top: 1px solid #ffe0b2;
+    font-size: 13px;
+}
+
+.confirm-delete span {
+    color: #333;
+}
+
+.confirm-delete button {
+    padding: 5px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.confirm-yes {
+    background-color: #ff4444;
+    color: white;
+}
+
+.confirm-yes:hover {
+    background-color: #ff0000;
+}
+
+.confirm-no {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.confirm-no:hover {
+    background-color: #d0d0d0;
+}
+
+.notes-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#editor {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+}
+
+.ql-toolbar.ql-snow {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-color: #e0e0e0;
+    background: #f8f8f8;
+}
+
+.ql-container.ql-snow {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-color: #e0e0e0;
+}
+
+.add-note-btn, .save-note-btn {
     background: #FFA600;
     color: white;
     border: none;
     padding: 8px 16px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.save-note-btn:hover {
+.add-note-btn:hover, .save-note-btn:hover {
     background: #FF8C00;
-}
-
-#editor {
-    height: 300px;
-    border-radius: 5px;
+    transform: translateY(-1px);
 }
 
