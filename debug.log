@@ -635,3 +635,14 @@
 2025-01-24 20:27:16 - Connexion BD réussie - []
 2025-01-24 20:27:22 - Début de la requête - {"method":"GET"}
 2025-01-24 20:27:22 - Connexion BD réussie - []
+2025-01-25 16:40:12 - Début de la requête - {"method":"GET"}
+2025-01-25 16:40:12 - Connexion BD réussie - []
+2025-01-25 16:40:21 - Début de la requête - {"method":"POST"}
+2025-01-25 16:40:21 - Connexion BD réussie - []
+2025-01-25 16:40:21 - Données brutes reçues - {"raw_input":"{\"content\":\"<p>refef<\/p>\",\"ruche_id\":\"1\",\"action\":\"add\"}"}
+2025-01-25 16:40:21 - Données décodées - {"postData":{"content":"<p>refef<\/p>","ruche_id":"1","action":"add"}}
+2025-01-25 16:40:21 - Note ajoutée avec succès - {"note_id":"1"}
+2025-01-25 16:40:21 - Début de la requête - {"method":"GET"}
+2025-01-25 16:40:21 - Connexion BD réussie - []
+2025-01-25 16:40:26 - Début de la requête - {"method":"GET"}
+2025-01-25 16:40:26 - Connexion BD réussie - []
