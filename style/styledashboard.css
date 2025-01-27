@@ -863,7 +863,8 @@ canvas {
     }
 
     .image {
-        display: none;
+        display: flex;
+        justify-content: center;
     }
 
     .menu {
