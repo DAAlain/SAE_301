@@ -848,11 +848,11 @@ canvas {
         position: relative;
         top: auto;
         right: auto;
-        padding: 20px;
+        padding: 10px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         z-index: 1;
         background: none;
         width: auto;
@@ -970,6 +970,16 @@ canvas {
 
     .stats-container {
         grid-template-columns: 1fr;
+    }
+
+    .notifications, .quitter {
+        padding: 8px;
+        transform: scale(0.9);
+    }
+
+    .profile-image {
+        width: 40px;
+        height: 40px;
     }
 }
 

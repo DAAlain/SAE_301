@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistiques</title>
+    <title>BeeConnect - Statistiques</title>
     <link rel="stylesheet" href="style/styledashboard.css">
+    <link rel="shortcut icon" href="assets/img/Logo.webp">
 </head>
 
 <body>

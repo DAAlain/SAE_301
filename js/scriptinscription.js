@@ -1,7 +1,6 @@
 let str=window.location.href;
 var url= new URL(str);
 var action= url.searchParams.get("action");
-console.log(action);
 
 const container = document.querySelector('.container');
 const boutoni = document.querySelector('.btn-register');

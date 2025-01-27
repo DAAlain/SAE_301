@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Ruches</title>
+    <title>BeeConnect - Gestion Ruches</title>
     <link rel="stylesheet" href="style/styleadmin.css">
+    <link rel="shortcut icon" href="assets/img/Logo.webp">
 </head>
 
 <body>

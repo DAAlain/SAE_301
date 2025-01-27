@@ -351,3 +351,228 @@ h3 {
 .user-item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+/* Styles pour le menu hamburger (caché par défaut) */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: #FFA600;
+    border-radius: 5px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Media Queries pour Tablette */
+@media screen and (max-width: 1024px) {
+    .users-container, .ruches-container {
+        flex-direction: column;
+    }
+
+    .users-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ruches-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ruche-data {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media Queries pour Mobile */
+@media screen and (max-width: 768px) {
+    header {
+        margin: 10px;
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        background: none;
+        box-shadow: none;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    nav {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background: #f7f7f7;
+        flex-direction: column;
+        padding: 20px;
+        transition: top 0.3s ease;
+        z-index: 999;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    nav::before {
+        content: '';
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        background-image: url('../assets/img/Logo.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 40px;
+    }
+
+    nav a {
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 10px 20px;
+    }
+
+    nav a.active {
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+
+    header.active nav {
+        top: 0;
+    }
+
+    .profile {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background: #FFA600;
+        border-radius: 5px;
+    }
+
+    .menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .user-details, .ruche-details {
+        margin-top: 20px;
+    }
+
+    .ruche-data {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .action-buttons button {
+        width: auto;
+        padding: 10px 20px;
+        min-width: 200px;
+        text-align: center;
+    }
+
+    .action-buttons form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .data-item {
+        padding: 8px;
+    }
+
+    .data-item .value {
+        font-size: 16px;
+    }
+
+    .data-item .label {
+        font-size: 11px;
+    }
+
+    .ruche-details h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .profile-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .profile-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .quitter {
+        background: #eaeaea;
+        padding: 8px;
+        border-radius: 100%;
+    }
+
+    .quitter svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Styles pour le menu hamburger actif */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+

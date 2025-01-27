@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion Utilisateurs</title>
+    <title>BeeConnect - Gestion Utilisateurs</title>
     <link rel="stylesheet" href="style/styleadmin.css">
+    <link rel="shortcut icon" href="assets/img/Logo.webp">
 </head>
 
 <body>
@@ -89,7 +90,6 @@
 
             // Récupérer toutes les ruches de la base de données
             const allRuches = <?php echo json_encode(get_ruches()); ?>;
-            console.log('Ruches:', allRuches);
 
             userItems.forEach(item => {
                 item.addEventListener('click', function() {
