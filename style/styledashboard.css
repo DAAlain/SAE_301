@@ -963,5 +963,12 @@ canvas {
     .notes-content {
         height: 300px;
     }
+
+
+    /*Statistiques*/
+
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
 }
 
