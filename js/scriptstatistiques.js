@@ -164,3 +164,31 @@ document.addEventListener('DOMContentLoaded', () => {
         rucheBtns[0].click();
     }
 }); 
+
+
+
+// Gestion du menu hamburger
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.createElement('div');
+    hamburger.className = 'hamburger-menu';
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+    document.body.appendChild(hamburger);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+
+    hamburger.addEventListener('click', function() {
+        const header = document.querySelector('header');
+        this.classList.toggle('active');
+        header.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', function() {
+        const header = document.querySelector('header');
+        hamburger.classList.remove('active');
+        header.classList.remove('active');
+        this.classList.remove('active');
+    });
+});

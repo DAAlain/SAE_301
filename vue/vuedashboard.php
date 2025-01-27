@@ -12,11 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
+
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body>
+
     <div class="page">
         <header>
             <div class="image">
@@ -314,7 +315,7 @@
             <?php endif; ?>
         </div>
     </div>
-    
+
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script>
         // Rendre les données disponibles pour JavaScript
