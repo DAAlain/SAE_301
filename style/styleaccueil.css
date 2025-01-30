@@ -62,11 +62,12 @@ header {
 }
 
 .header-inscription {
-    background-color: #F0F0F0;
+    background-color: #FFA600;
     padding-inline: 20px;
     padding-block: 10px;
     border-radius: 100px;
     font-weight: 700;
+    color: white;
 }
 
 .header-connexion {
@@ -831,12 +832,10 @@ footer {
 }
 
 .header-inscription {
-    background-color: #FFC107;
     border-radius: 100px;
 }
 
 .header-connexion {
-    border: 2px solid #FFC107;
     border-radius: 100px;
 }
 
