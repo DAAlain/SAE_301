@@ -531,7 +531,7 @@ footer {
 
     /* Footer mobile styles */
     .footer-mobile {
-        padding: 20px;
+        display: block;
     }
 
     .footer-desktop {

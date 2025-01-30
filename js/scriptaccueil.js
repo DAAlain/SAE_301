@@ -119,8 +119,22 @@ gsap.utils.toArray('a[href^="#"]').forEach(link => {
     });
 });
 
-document.getElementById('menuIcon').addEventListener('click', function() {
-    document.querySelector('.menu-items').classList.toggle('active');
+// Gestion du menu hamburger
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.getElementById('menuIcon');
+    const menuItems = document.querySelector('.menu-items');
+    const menuLinks = menuItems.querySelectorAll('a');
+
+    menuIcon.addEventListener('click', function() {
+        menuItems.classList.toggle('active');
+    });
+
+    // Ferme le menu quand un lien est cliqué
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menuItems.classList.remove('active');
+        });
+    });
 });
 
 // Pour le footer accordéon
