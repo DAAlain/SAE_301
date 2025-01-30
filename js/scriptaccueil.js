@@ -118,3 +118,25 @@ gsap.utils.toArray('a[href^="#"]').forEach(link => {
         }
     });
 });
+
+document.getElementById('menuIcon').addEventListener('click', function() {
+    document.querySelector('.menu-items').classList.toggle('active');
+});
+
+// Pour le footer accordéon
+document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Ferme tous les accordéons
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        
+        // Ouvre l'accordéon cliqué si il n'était pas déjà ouvert
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
