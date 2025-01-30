@@ -36,6 +36,8 @@
                     <a href="#" class="exo-regular">Mot de passe oublié ?</a>
                 </div>
                 <button type="submit" class="btn bakbak-one-regular valid" name="ok" value="Valider" >Connexion</button>
+                <div id="error-messages-login" class="error-messages">
+                </div>
             </form>
         </div>
 

@@ -3,33 +3,35 @@ require_once "modele/bdd.php";
 
 function login($mail, $mdp)
 {
-    if (isset($_POST["ok"])) {
-        $nom_utilisateur = $mail;
-        $mot_de_passe = $mdp;
+    $nom_utilisateur = $mail;
+    $mot_de_passe = $mdp;
 
-        $requete = "SELECT * FROM compte WHERE Mail=?;";
-        $data = $nom_utilisateur;
+    $requete = "SELECT * FROM compte WHERE Mail=?;";
+    $data = $nom_utilisateur;
 
-        $donnees = execReqPrep($requete, array($data));
+    $donnees = execReqPrep($requete, array($data));
 
-        if ($donnees) {
-            if (password_verify($mot_de_passe, $donnees["mdp"])) {
-                $_SESSION["nom"] = $donnees["Nom"];
-                $_SESSION["id"] = $donnees["id"];
-                $_SESSION["photo_profil"] = $donnees["photo_profil"] ?? 'default.png';
-                if ($donnees["autorisation"] == "0") {
-                    header("Location: index.php?acces=normal");
-                }
-                if ($donnees["autorisation"] == "1") {
-                    header("Location: index.php?acces=admin");
-                }
-            } else {
-                echo "Mot de passe incorrect";
+    if ($donnees) {
+        if (password_verify($mot_de_passe, $donnees["mdp"])) {
+            $_SESSION["nom"] = $donnees["Nom"];
+            $_SESSION["id"] = $donnees["id"];
+            $_SESSION["photo_profil"] = $donnees["photo_profil"] ?? 'default.png';
+            
+            $response = ['success' => true];
+            if ($donnees["autorisation"] == "0") {
+                $response['redirect'] = 'index.php?acces=normal';
+            } else if ($donnees["autorisation"] == "1") {
+                $response['redirect'] = 'index.php?acces=admin';
             }
+            echo json_encode($response);
+            exit;
         } else {
-            echo "Nom d'utilisateur introuvable";
-            require "vue/vueinscription.php";
+            echo json_encode(['success' => false, 'error' => 'Mot de passe incorrect']);
+            exit;
         }
+    } else {
+        echo json_encode(['success' => false, 'error' => "Cette adresse email n'existe pas"]);
+        exit;
     }
 }
 

@@ -83,6 +83,7 @@ if (isset($_SESSION["nom"])) {
 
         if ($_GET["action"] == "login") {
             login($_POST["mail"], $_POST["mdp"]);
+            exit;
         }
 
         if ($_GET["action"] == "register") {

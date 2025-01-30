@@ -99,4 +99,40 @@ document.addEventListener('DOMContentLoaded', function() {
         // Si on arrive ici, il n'y a pas d'erreur, on peut soumettre le formulaire
         this.submit();
     });
+
+    // Ajout de la gestion du formulaire de connexion
+    const loginForm = document.getElementById('loginForm');
+    const loginErrorDiv = document.getElementById('error-messages-login');
+
+    // Fonction pour afficher les erreurs de connexion
+    function showLoginError(message) {
+        loginErrorDiv.innerHTML = '';
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.textContent = message;
+        loginErrorDiv.appendChild(errorElement);
+    }
+
+    // Gestion de la soumission du formulaire de connexion
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch('index.php?action=login', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = data.redirect;
+            } else {
+                showLoginError(data.error);
+            }
+        })
+        .catch(error => {
+            showLoginError('Une erreur est survenue. Veuillez réessayer.');
+        });
+    });
 });
